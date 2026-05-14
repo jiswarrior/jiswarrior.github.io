@@ -7,7 +7,7 @@
   <meta name="description" content="Check latest 7‑day Wordle answers, hints, stats and history. Daily Wordle puzzle archive with calendar.">
   <meta name="keywords" content="Wordle 7 day calendar, latest Wordle answers, Wordle stats, daily Wordle history">
   <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://你的域名.com/">
+  <link rel="canonical" href="https://dailywordlehub.com">
   <style>
     *{margin:0;padding:0;box-sizing:border-box;font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Arial,sans-serif}
     body{background:#f6f7f9;padding:15px;max-width:900px;margin:0 auto;line-height:1.5}
