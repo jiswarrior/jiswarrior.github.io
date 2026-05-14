@@ -1,33 +1,44 @@
-// 固定基准：美国太平洋时间 2026‑05‑14 = #1790
-// 强制写死7天数据，自动递增，永久适配冬/夏令时
-const baseNum = 1790;
-// 今天固定为 #1790
-const todayNum = baseNum;
-// 近7天：往前推6天
-const sevenDaysData = [];
-for(let i=6; i>=0; i++){
-  const num = todayNum - 6 + i;
-  // 直接写死日期对应关系，永久正确
-  const map = {
-    1784:"May 8",
-    1785:"May 9",
-    1786:"May 10",
-    1787:"May 11",
-    1788:"May 12",
-    1789:"May 13",
-    1790:"May 14"
-  };
-  const dateStr = map[num];
-  sevenDaysData.push({
-    dateStr,
-    num,
-    isToday: num === todayNum
-  });
+// ======================
+// 终极配置 全年无错版
+// 太平洋时间 2026-05-14 = #1790
+// 自动适配 夏令时PDT / 冬令时PST
+// ======================
+const BASE_DATE = new Date("2026-05-14T00:00:00").toLocaleString('en-US', { timeZone: 'America/Los_Angeles' });
+const BASE_NUM = 1790;
+
+// 获取【真正的洛杉矶/太平洋时间】
+function getNowPT() {
+  return new Date(new Date().toLocaleString('en-US', { timeZone: 'America/Los_Angeles' }));
 }
 
-// 渲染日历
+// 计算天数差（绝对正确）
+function daysDifference(date1, date2) {
+  const d1 = new Date(date1);
+  const d2 = new Date(date2);
+  d1.setHours(0, 0, 0, 0);
+  d2.setHours(0, 0, 0, 0);
+  const diffTime = d2 - d1;
+  return Math.floor(diffTime / (1000 * 60 * 60 * 24));
+}
+
+// 生成 7 天数据
+const todayPT = getNowPT();
+const diff = daysDifference(BASE_DATE, todayPT);
+const todayNumber = BASE_NUM + diff;
+const sevenDaysData = [];
+
+for (let i = 6; i >= 0; i--) {
+  const d = new Date(todayPT);
+  d.setDate(todayPT.getDate() - i);
+  const num = todayNumber - i;
+  const dateStr = d.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+  sevenDaysData.push({ dateStr, num, isToday: i === 0 });
+}
+
+// 渲染页面
 const calendarWrap = document.getElementById('calendarWrap');
 const quickWrap = document.getElementById('quickWrap');
+
 sevenDaysData.forEach(item => {
   const cls = item.isToday ? 'day-box today' : 'day-box past';
   calendarWrap.innerHTML += `<div class="${cls}"><a href="wordle-${item.num}.html">${item.dateStr}<br>#${item.num}</a></div>`;
@@ -37,9 +48,9 @@ sevenDaysData.forEach(item => {
 
 // 统计数据
 let userStats = JSON.parse(localStorage.getItem('wordleUserStats')) || {
-  total: todayNum, gamesPlayed: 0, wins: 0, currentStreak: 0, guessSum: 0
+  total: todayNumber, gamesPlayed: 0, wins: 0, currentStreak: 0, guessSum: 0
 };
-userStats.total = todayNum;
+userStats.total = todayNumber;
 
 document.getElementById('totalPuzzles').textContent = userStats.total;
 document.getElementById('winRate').textContent = userStats.gamesPlayed ? Math.round((userStats.wins / userStats.gamesPlayed) * 100) + '%' : '0%';
