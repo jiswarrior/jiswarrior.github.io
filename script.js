@@ -1,67 +1,57 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Daily Wordle Hints & Answers | dailywordlehub.com</title>
-    <meta name="description" content="Get daily Wordle hints, answers, puzzle history and statistics. Updated daily by Pacific Time.">
-    <link rel="canonical" href="https://dailywordlehub.com">
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <div class="container">
-        <h1>Wordle 7‑Day Calendar</h1>
-        <p class="subtitle">Latest 7 Days Answers | Statistics | Puzzle History</p>
+// 基准：美国太平洋时间 2025‑05‑14  = #1790
+const START_DATE = new Date("2025‑05‑14T00:00:00‑07:00");
+const START_NUM = 1790;
 
-        <!-- 顶部统计卡片 -->
-        <div class="stats-grid">
-            <div class="stat-card">
-                <div class="stat-num total-puzzles">1790</div>
-                <div class="stat-label">Total Puzzles</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-num">0%</div>
-                <div class="stat-label">Win Rate</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-num">0</div>
-                <div class="stat-label">Current Streak</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-num">0.0</div>
-                <div class="stat-label">Avg Guesses</div>
-            </div>
-        </div>
+// 获取美国太平洋时间 UTC‑7
+function getPT() {
+  const now = new Date();
+  const utc = now.getTime() + (now.getTimezoneOffset() * 60000);
+  return new Date(utc - 7 * 3600000);
+}
 
-        <!-- 7天日历区域 -->
-        <div class="section">
-            <h2 class="section‑title">Latest 7 Days Puzzle Calendar</h2>
-            <div class="calendar-row">
-                <div class="calendar‑day"></div>
-                <div class="calendar‑day"></div>
-                <div class="calendar‑day"></div>
-                <div class="calendar‑day"></div>
-                <div class="calendar‑day"></div>
-                <div class="calendar‑day"></div>
-                <div class="calendar‑day today"></div>
-            </div>
-        </div>
+// 计算今天编号
+function getTodayNum() {
+  const diff = Math.floor((getPT() - START_DATE) / (1000*60*60*24));
+  return START_NUM + diff;
+}
 
-        <!-- 快速访问区域 -->
-        <div class="section">
-            <h2 class="section‑title">Quick Access (Latest 7 Days)</h2>
-            <div class="quick‑access-grid">
-                <div class="quick‑item"></div>
-                <div class="quick‑item"></div>
-                <div class="quick‑item"></div>
-                <div class="quick‑item"></div>
-                <div class="quick‑item"></div>
-                <div class="quick‑item"></div>
-                <div class="quick‑item today‑item"></div>
-            </div>
-        </div>
-    </div>
+// 获取近7天
+function get7Days() {
+  const today = getPT();
+  const todayNum = getTodayNum();
+  const month = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+  const list = [];
+  for(let i=6;i>=0;i--){
+    const d = new Date(today.getTime() - i*86400000);
+    list.push({
+      date: `${month[d.getMonth()]} ${d.getDate()}`,
+      num: todayNum - i
+    })
+  }
+  return list;
+}
 
-    <script src="script.js"></script>
-</body>
-</html>
+// 渲染（完全沿用你原有布局）
+function render() {
+  const days = get7Days();
+  // 总谜题
+  document.querySelector(".total‑num").innerText = getTodayNum();
+  // 日历
+  document.querySelectorAll(".cal‑day").forEach((el,i)=>{
+    el.innerHTML = `${days[i].date}<br>#${days[i].num}`;
+    if(i===6) {
+      el.style.background = "#2e7d32";
+      el.style.color = "#fff";
+    }else{
+      el.style.background = "#e8f5e9";
+      el.style.color = "#000";
+    }
+  })
+  // 快速访问
+  document.querySelectorAll(".quick‑item").forEach((el,i)=>{
+    if(i<6) el.innerText = `${days[i].date} #${days[i].num}`;
+    else el.innerText = `Today: ${days[i].date} #${days[i].num}`;
+  })
+}
+
+window.addEventListener("DOMContentLoaded", render);
