@@ -8,6 +8,17 @@
   <meta name="description" content="Get today's Wordle hints, clues, solver, and answer for daily Wordle puzzle. Use our Wordle simulator and word solver to win every game quickly.">
   <!-- 2. Meta Keywords：关键词布局 -->
   <meta name="keywords" content="Wordle today answer, Wordle hints, Wordle clues, Wordle solver, Wordle cheat, daily Wordle solution, Wordle simulator">
+  <title>Wordle 7‑Day Calendar | Daily Answers & Statistics</title>
+  <!-- 👇 新增这行代码（关键）👇 -->
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <!-- 👆 新增这行代码（关键）👆 -->
+  <!-- 原有 Favicon 保留（给浏览器用） -->
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<!-- 新增谷歌抓取用的高分辨率图标 -->
+<link rel="icon" type="image/png" sizes="192x192" href="icon-192x192.png">
+<link rel="icon" type="image/png" sizes="512x512" href="icon-512x512.png">
+<!-- 苹果/通用高分辨率图标（辅助谷歌抓取） -->
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
   <!-- 3. 爬虫指令：允许索引，允许抓取 -->
   <meta name="robots" content="index, follow">
   <!-- 4. 规范链接，避免重复页面 -->
@@ -40,18 +51,53 @@
       text-align: center;
       margin-bottom: 15px;
       position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .header-left {
+      flex-shrink: 0;
+    }
+
+    .home-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #f0f7ef;
+      color: #538d4e;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.9rem;
+      padding: 6px 12px;
+      border-radius: 40px;
+      transition: all 0.2s;
+      border: 1px solid #d0e6cc;
+    }
+
+    .home-link:hover {
+      background: #e2f0df;
+      border-color: #538d4e;
+      transform: translateY(-1px);
+    }
+
+    .header-center {
+      flex: 1;
+      text-align: center;
     }
 
     h1 {
       color: #538d4e;
-      margin-bottom: 5px;
+      margin-bottom: 0;
       font-size: 1.4rem;
     }
 
     .lang-switch {
-      position: absolute;
-      top: 0;
-      right: 0;
+      display: flex;
+      gap: 6px;
+      flex-shrink: 0;
     }
     .lang-btn {
       padding: 4px 8px;
@@ -60,7 +106,6 @@
       color: #538d4e;
       border-radius: 6px;
       cursor: pointer;
-      margin-left: 4px;
       font-size: 0.85rem;
     }
     .lang-btn.active {
@@ -220,6 +265,18 @@
         flex-direction: column;
         gap: 12px;
       }
+      header {
+        flex-direction: column;
+      }
+      .header-center {
+        order: 2;
+      }
+      .lang-switch {
+        order: 3;
+      }
+      .header-left {
+        order: 1;
+      }
     }
   </style>
   <!-- 6. 谷歌结构化数据 Schema.org（可出搜索卡片，流量暴涨） -->
@@ -237,11 +294,19 @@
 </head>
 <body class="show-en">
   <header>
+    <div class="header-left">
+      <a href="https://dailywordlehub.com/" class="home-link">
+        <span class="zh">🏠 首页</span>
+        <span class="en">🏠 Home</span>
+      </a>
+    </div>
+    <div class="header-center">
+      <h1 id="mainTitle"></h1>
+    </div>
     <div class="lang-switch">
       <button class="lang-btn" id="btnZh">中文</button>
       <button class="lang-btn active" id="btnEn">English</button>
     </div>
-    <h1 id="mainTitle"></h1>
   </header>
 
   <main>
@@ -403,6 +468,13 @@
   <footer>
     <span class="zh">Wordle 攻略站 | 每日Wordle答案与提示</span>
     <span class="en">Wordle Helper | Daily Wordle Hints & Answer Guide</span>
+    <!-- 新增指向首页的链接，样式与站点主题一致，支持中英文切换 -->
+    <div style="margin-top: 12px;">
+      <a href="https://dailywordlehub.com/" style="color: #538d4e; text-decoration: none; border-bottom: 1px dotted #538d4e; padding-bottom: 2px;">
+        <span class="zh">🏠 返回 Wordle 首页</span>
+        <span class="en">🏠 Back to Wordle Hub</span>
+      </a>
+    </div>
   </footer>
 
   <script>
@@ -415,9 +487,9 @@
     const seoTitleEl = document.getElementById('seoTitle');
 
     // ====================== 每日更新区域（只改这里，SEO自动同步）======================
-    // 1. 标题日期：May 12
+    // 1. 标题日期：May 17
     const titleDate = "May 13";
-    // 2. 标题编号：#1788
+    // 2. 标题编号：#1793
     const titleNumber = "#1789";
     // 3. 今日答案
     let dailyAnswer = "dowdy";
