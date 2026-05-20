@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wordle Puzzle History | dailywordlehub.com</title>
+  <meta name="description" content="Browse the complete Wordle puzzle history archive, from #1790 onwards. Find answers for every past Wordle puzzle.">
+  <meta name="keywords" content="Wordle history, past Wordle answers, Wordle puzzle archive">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://dailywordlehub.com/history.html">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="icon-192x192.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box;font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Arial,sans-serif}
+    body{background:#f6f7f9;padding:15px;max-width:900px;margin:0 auto;line-height:1.5}
+    header{text-align:center;margin-bottom:20px}
+    h1{color:#538d4e;margin-bottom:8px;font-size:1.5rem}
+    .desc{color:#666;margin-bottom:20px}
+    .section{background:white;padding:18px;border-radius:10px;margin-bottom:20px}
+    h2{color:#538d4e;margin-bottom:14px;font-size:1.2rem;border-left:4px solid #538d4e;padding-left:10px}
+    .history-grid{display:grid;grid-template-columns:repeat(auto-fill, minmax(120px, 1fr));gap:10px}
+    .history-item{background:#f1f1f1;padding:10px;border-radius:6px;text-align:center;text-decoration:none;color:#333;font-size:0.9rem}
+    .history-item:hover{background:#e7f5e6;color:#538d4e}
+    footer{text-align:center;margin-top:30px;color:#777;font-size:0.85rem}
+    .back-link{display:inline-block;margin-top:10px;color:#538d4e;text-decoration:none}
+    .back-link:hover{text-decoration:underline}
+    @media (max-width:700px){.history-grid{grid-template-columns:repeat(auto-fill, minmax(100px, 1fr))}}
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Wordle Puzzle History</h1>
+    <p class="desc">Complete archive of all Wordle puzzles</p>
+    <a href="/" class="back-link">← Back to 7-Day Calendar</a>
+  </header>
+
+  <div class="section">
+    <h2>All Wordle Puzzles (#1790 to Today)</h2>
+    <div class="history-grid" id="historyGrid"></div>
+  </div>
+
+  <footer>Wordle Helper | Puzzle History Archive</footer>
+
+  <script>
+    // 基准：美东时间 2026-05-14 = #1790
+    const BASE_NUM = 1790;
+    // 获取今天的Wordle编号（和主站逻辑完全一致）
+    function getTodayWordleNumber() {
+      const baseDate = new Date("2026-05-14T00:00:00Z");
+      const todayET = new Date(new Date().toLocaleString("en-US", { timeZone: "America/New_York" }));
+      todayET.setHours(0, 0, 0, 0);
+      baseDate.setHours(0, 0, 0, 0);
+      const diffDays = Math.floor((todayET - baseDate) / (1000 * 60 * 60 * 24));
+      return BASE_NUM + diffDays;
+    }
+
+    // 生成所有历史期数链接
+    const todayNum = getTodayWordleNumber();
+    const historyGrid = document.getElementById('historyGrid');
+    for (let num = BASE_NUM; num <= todayNum; num++) {
+      const link = document.createElement('a');
+      link.href = `wordle-${num}.html`;
+      link.className = 'history-item';
+      link.textContent = `#${num}`;
+      historyGrid.appendChild(link);
+    }
+  </script>
+</body>
+</html>
