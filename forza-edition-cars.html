@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Forza Horizon 6 Forza Edition Cars — All FE Cars & Special Traits 2026 | FH6Guide</title>
+<meta name="description" content="Every Forza Edition car in FH6, their special traits, how to unlock them, and which are worth chasing. Complete FE car list with skill tree bonuses and where to find each one.">
+<link rel="canonical" href="https://www.fh6guide.org/forza-edition-cars.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Mono:wght@300;400;500&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg:        #0a0a0c;
+  --bg2:       #111116;
+  --bg3:       #18181f;
+  --bg4:       #1f1f28;
+  --border:    rgba(255,255,255,0.07);
+  --border2:   rgba(255,255,255,0.12);
+  --accent:    #e8ff47;
+  --accent2:   #ff6b35;
+  --accent3:   #47c5ff;
+  --text:      #f0efe8;
+  --muted:     #7a7a88;
+  --muted2:    #4a4a58;
+  --green:     #1D9E75;
+  --amber:     #BA7517;
+  --red:       #ff4d4d;
+  --purple:    #7F77DD;
+  --section-color: #e8ff47;
+  --font-disp: 'Bebas Neue', sans-serif;
+  --font-body: 'DM Sans', sans-serif;
+  --font-mono: 'DM Mono', monospace;
+}
+
+html { scroll-behavior: smooth; }
+body { background: var(--bg); color: var(--text); font-family: var(--font-body); font-size: 15px; line-height: 1.6; min-height: 100vh; overflow-x: hidden; }
+a { color: inherit; text-decoration: none; }
+
+nav { position: sticky; top: 0; z-index: 100; background: rgba(10,10,12,0.92); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); padding: 0 2rem; display: flex; align-items: center; gap: 2rem; height: 52px; }
+.nav-logo { font-family: var(--font-disp); font-size: 22px; letter-spacing: .04em; color: var(--accent); flex-shrink: 0; }
+.nav-logo span { color: var(--text); }
+.nav-links { display: flex; gap: 0; list-style: none; flex: 1; }
+.nav-links a { display: block; padding: 0 14px; height: 52px; line-height: 52px; font-size: 13px; font-weight: 500; color: var(--muted); letter-spacing: .03em; transition: color .15s; white-space: nowrap; }
+.nav-links a:hover { color: var(--text); }
+.nav-links a.active { color: var(--accent); }
+.nav-search { margin-left: auto; display: flex; align-items: center; gap: 8px; background: var(--bg3); border: 1px solid var(--border2); border-radius: 6px; padding: 0 12px; height: 34px; flex-shrink: 0; }
+.nav-search input { background: none; border: none; outline: none; color: var(--text); font-family: var(--font-body); font-size: 13px; width: 180px; }
+.nav-search input::placeholder { color: var(--muted2); }
+.nav-search svg { color: var(--muted); }
+.nav-hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; margin-left: auto; padding: 6px; flex-shrink: 0; }
+.nav-hamburger span { display: block; width: 22px; height: 2px; background: var(--text); border-radius: 2px; }
+.nav-drawer { display: none; position: fixed; top: 52px; left: 0; right: 0; background: rgba(10,10,12,0.98); border-bottom: 1px solid var(--border2); padding: 12px 0 20px; z-index: 99; flex-direction: column; }
+.nav-drawer.open { display: flex; }
+.nav-drawer a { padding: 12px 2rem; font-size: 15px; font-weight: 500; color: var(--muted); display: block; transition: color .15s; }
+.nav-drawer a:hover { color: var(--text); }
+.nav-drawer a.active { color: var(--accent); }
+.nav-drawer-search { margin: 12px 2rem 0; display: flex; align-items: center; gap: 8px; background: var(--bg3); border: 1px solid var(--border2); border-radius: 6px; padding: 0 12px; height: 40px; }
+.nav-drawer-search input { background: none; border: none; outline: none; color: var(--text); font-family: var(--font-body); font-size: 14px; flex: 1; }
+.nav-drawer-search input::placeholder { color: var(--muted2); }
+
+.page-wrap { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+.breadcrumb { display: flex; align-items: center; gap: 8px; font-family: var(--font-mono); font-size: 11px; color: var(--muted); padding: 14px 0; letter-spacing: .04em; }
+.breadcrumb a { color: var(--muted); transition: color .15s; }
+.breadcrumb a:hover { color: var(--text); }
+.content-wrap { display: grid; grid-template-columns: 1fr 268px; gap: 40px; padding: 36px 0 60px; }
+
+.article-eyebrow { font-family: var(--font-mono); font-size: 11px; color: var(--section-color); letter-spacing: .1em; text-transform: uppercase; margin-bottom: 12px; display: flex; align-items: center; gap: 10px; }
+.article-eyebrow::before { content: ''; display: block; width: 20px; height: 1px; background: var(--section-color); }
+.article-title { font-family: var(--font-disp); font-size: clamp(36px, 6vw, 58px); line-height: .95; letter-spacing: .02em; margin-bottom: 16px; }
+.article-title span { color: var(--section-color); }
+.article-meta { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; font-family: var(--font-mono); font-size: 10px; color: var(--muted); letter-spacing: .06em; margin-bottom: 28px; padding-bottom: 24px; border-bottom: 1px solid var(--border); }
+.article-meta-dot { width: 3px; height: 3px; border-radius: 50%; background: var(--muted2); }
+
+.tag { font-family: var(--font-mono); font-size: 9px; letter-spacing: .08em; text-transform: uppercase; padding: 3px 7px; border-radius: 4px; border: 1px solid; }
+.tag-endgame { color: var(--accent); border-color: rgba(232,255,71,0.3); background: rgba(232,255,71,0.08); }
+.tag-hot      { color: var(--red); border-color: rgba(255,77,77,0.3); background: rgba(255,77,77,0.08); }
+
+.prose { color: var(--text); }
+.prose h2 { font-family: var(--font-disp); font-size: 26px; letter-spacing: .04em; margin: 36px 0 14px; color: var(--text); display: flex; align-items: center; gap: 12px; }
+.prose h2::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+.prose h3 { font-size: 15px; font-weight: 500; margin: 24px 0 8px; color: var(--text); }
+.prose p { color: var(--muted); line-height: 1.7; margin-bottom: 14px; font-size: 14px; }
+.prose p strong { color: var(--text); font-weight: 500; }
+.prose ul { color: var(--muted); font-size: 14px; line-height: 1.7; padding-left: 18px; margin-bottom: 14px; }
+.prose ul li { margin-bottom: 4px; }
+
+/* FE BADGE */
+.fe-badge {
+  display: inline-flex; align-items: center; gap: 6px;
+  background: rgba(232,255,71,0.08); border: 1px solid rgba(232,255,71,0.25);
+  border-radius: 4px; padding: 3px 8px;
+  font-family: var(--font-mono); font-size: 9px; color: var(--accent); letter-spacing: .1em;
+}
+
+/* FE CARDS */
+.fe-list { display: flex; flex-direction: column; gap: 12px; margin: 16px 0; }
+.fe-card {
+  background: var(--bg2); border: 1px solid var(--border); border-radius: 10px;
+  overflow: hidden; transition: border-color .2s;
+}
+.fe-card:hover { border-color: var(--border2); }
+.fe-card-top {
+  display: flex; align-items: flex-start; gap: 0;
+  padding: 16px 16px 14px; border-bottom: 1px solid var(--border);
+  position: relative;
+}
+.fe-accent-bar {
+  position: absolute; left: 0; top: 0; bottom: 0; width: 3px;
+}
+.fe-car-info { flex: 1; padding-left: 4px; }
+.fe-car-name { font-weight: 500; font-size: 14px; margin-bottom: 4px; }
+.fe-car-class { font-family: var(--font-mono); font-size: 10px; color: var(--muted); letter-spacing: .06em; margin-bottom: 8px; }
+.fe-traits { display: flex; flex-wrap: wrap; gap: 6px; }
+.fe-trait {
+  font-family: var(--font-mono); font-size: 9px; padding: 3px 8px;
+  border-radius: 3px; letter-spacing: .06em; border: 1px solid;
+}
+.fe-trait-xp   { color: var(--accent); border-color: rgba(232,255,71,0.25); background: rgba(232,255,71,0.06); }
+.fe-trait-cr   { color: var(--amber); border-color: rgba(186,117,23,0.25); background: rgba(186,117,23,0.06); }
+.fe-trait-skill { color: var(--accent3); border-color: rgba(71,197,255,0.25); background: rgba(71,197,255,0.06); }
+.fe-trait-drift { color: var(--accent2); border-color: rgba(255,107,53,0.25); background: rgba(255,107,53,0.06); }
+.fe-source { font-family: var(--font-mono); font-size: 10px; color: var(--muted); margin-left: auto; text-align: right; flex-shrink: 0; padding-left: 12px; letter-spacing: .04em; line-height: 1.5; }
+.fe-source .source-label { color: var(--muted2); font-size: 9px; display: block; margin-bottom: 2px; }
+.fe-card-bottom { padding: 12px 16px 14px 20px; }
+.fe-desc { font-size: 12px; color: var(--muted); line-height: 1.6; }
+
+/* SOURCE PILLS */
+.source-pill {
+  display: inline-flex; align-items: center; gap: 4px; font-family: var(--font-mono);
+  font-size: 9px; letter-spacing: .06em; padding: 2px 7px; border-radius: 3px;
+  border: 1px solid var(--border2); color: var(--muted); margin-top: 6px;
+}
+.source-playlist { color: var(--green); border-color: rgba(29,158,117,0.3); background: rgba(29,158,117,0.06); }
+.source-wheelspins { color: var(--purple); border-color: rgba(127,119,221,0.3); background: rgba(127,119,221,0.06); }
+.source-level { color: var(--amber); border-color: rgba(186,117,23,0.3); background: rgba(186,117,23,0.06); }
+
+/* TIP BOXES */
+.tip-box { background: rgba(232,255,71,0.05); border: 1px solid rgba(232,255,71,0.15); border-left: 3px solid var(--accent); border-radius: 0 6px 6px 0; padding: 14px 16px; margin: 20px 0; }
+.tip-box-label { font-family: var(--font-mono); font-size: 10px; color: var(--accent); letter-spacing: .1em; text-transform: uppercase; margin-bottom: 6px; }
+.tip-box p { color: var(--muted); font-size: 13px; margin: 0; }
+
+.info-box { background: rgba(71,197,255,0.06); border: 1px solid rgba(71,197,255,0.2); border-left: 3px solid var(--accent3); border-radius: 0 6px 6px 0; padding: 14px 16px; margin: 20px 0; }
+.info-box-label { font-family: var(--font-mono); font-size: 10px; color: var(--accent3); letter-spacing: .1em; text-transform: uppercase; margin-bottom: 6px; }
+.info-box p { color: var(--muted); font-size: 13px; margin: 0; }
+
+/* SUMMARY TABLE */
+.summary-table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+.summary-table th { text-align: left; font-family: var(--font-mono); font-size: 10px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); padding: 8px 12px; border-bottom: 1px solid var(--border2); background: var(--bg2); }
+.summary-table td { padding: 10px 12px; border-bottom: 1px solid var(--border); font-size: 13px; }
+.summary-table td:first-child { font-weight: 500; color: var(--text); }
+.summary-table td:nth-child(2) { color: var(--accent); font-family: var(--font-mono); font-size: 11px; }
+.summary-table td:last-child { color: var(--muted); font-size: 12px; }
+.summary-table tr:hover td { background: rgba(255,255,255,0.02); }
+
+/* SIDEBAR */
+.sidebar { display: flex; flex-direction: column; gap: 16px; }
+.sidebar-card { background: var(--bg2); border: 1px solid var(--border); border-radius: 10px; overflow: hidden; }
+.sidebar-card-head { padding: 12px 14px; border-bottom: 1px solid var(--border); font-family: var(--font-mono); font-size: 10px; color: var(--muted); letter-spacing: .08em; text-transform: uppercase; display: flex; align-items: center; gap: 8px; }
+.sidebar-card-head::before { content: ''; width: 3px; height: 3px; border-radius: 50%; background: var(--section-color); }
+.sidebar-links { list-style: none; }
+.sidebar-links li a { display: flex; align-items: center; justify-content: space-between; padding: 9px 14px; font-size: 13px; color: var(--muted); border-bottom: 1px solid var(--border); transition: color .15s, background .15s; }
+.sidebar-links li:last-child a { border-bottom: none; }
+.sidebar-links li a:hover { color: var(--text); background: var(--bg3); }
+.sidebar-links li a span { font-family: var(--font-mono); font-size: 10px; color: var(--muted2); }
+.toc { padding: 14px; }
+.toc a { display: block; font-size: 12px; color: var(--muted); padding: 5px 0 5px 12px; border-left: 1px solid var(--border2); transition: color .15s, border-color .15s; line-height: 1.4; }
+.toc a:hover { color: var(--text); border-left-color: var(--section-color); }
+.reward-box { padding: 14px; }
+.reward-row { display: flex; align-items: center; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid var(--border); font-size: 13px; }
+.reward-row:last-child { border-bottom: none; }
+.reward-label { color: var(--muted); }
+.reward-val { font-family: var(--font-mono); font-size: 12px; color: var(--accent); letter-spacing: .04em; }
+
+footer { border-top: 1px solid var(--border); padding: 36px 2rem; display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+.footer-logo { font-family: var(--font-disp); font-size: 18px; letter-spacing: .04em; color: var(--accent); }
+.footer-logo span { color: var(--muted); }
+.footer-note { font-family: var(--font-mono); font-size: 10px; color: var(--muted2); letter-spacing: .06em; }
+.footer-links { display: flex; gap: 20px; list-style: none; }
+.footer-links a { font-size: 12px; color: var(--muted); transition: color .15s; }
+.footer-links a:hover { color: var(--text); }
+
+@media(max-width:768px){
+  .nav-links,.nav-search{display:none}
+  .nav-hamburger{display:flex}
+  .page-wrap{padding:0 1.25rem}
+  .content-wrap{grid-template-columns:1fr;gap:0}
+  .sidebar{margin-top:32px;border-top:1px solid var(--border);padding-top:24px}
+  .article-title{font-size:clamp(28px,10vw,44px)}
+  .prose h2{font-size:22px}
+  .fe-source{display:none}
+  footer{flex-direction:column;align-items:flex-start;padding:28px 1.25rem;gap:16px}
+  .footer-links{flex-wrap:wrap;gap:14px}
+}
+@media(max-width:480px){
+  .summary-table{display:block;overflow-x:auto}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">FH6<span>Guide</span></a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="getting-started.html">Getting Started</a></li>
+    <li><a href="car-tier-list.html" class="active">Cars & Garage</a></li>
+    <li><a href="barn-finds.html">Collectibles</a></li>
+    <li><a href="progression.html">Progression</a></li>
+    <li><a href="tuning-guide.html">Advanced</a></li>
+  </ul>
+  <div class="nav-search">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+    <input type="text" placeholder="Search guides…">
+  </div>
+  <button class="nav-hamburger" onclick="toggleNav()" aria-label="Open menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="nav-drawer" id="navDrawer">
+  <a href="index.html">Home</a>
+  <a href="getting-started.html">Getting Started</a>
+  <a href="car-tier-list.html" class="active">Cars &amp; Garage</a>
+  <a href="barn-finds.html">Collectibles</a>
+  <a href="progression.html">Progression</a>
+  <a href="tuning-guide.html">Advanced</a>
+  <div class="nav-drawer-search">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+    <input type="text" placeholder="Search guides…">
+  </div>
+</div>
+
+<div class="page-wrap">
+  <div class="breadcrumb">
+    <a href="index.html">Home</a>
+    <span style="color:var(--muted2)">/</span>
+    <a href="car-tier-list.html">Cars & Garage</a>
+    <span style="color:var(--muted2)">/</span>
+    Forza Edition Cars
+  </div>
+</div>
+
+<div class="page-wrap">
+<div class="content-wrap">
+
+<article>
+  <div class="article-eyebrow">Cars & Garage</div>
+  <h1 class="article-title"><span>Forza Edition</span><br>Cars</h1>
+
+  <div class="article-meta">
+    <span class="tag tag-endgame">Endgame</span>
+    <span class="tag tag-hot">Hot</span>
+    <div class="article-meta-dot"></div>
+    <span>Updated May 21, 2026</span>
+    <div class="article-meta-dot"></div>
+    <span>~10 min read</span>
+  </div>
+
+  <div class="prose">
+    <p>Forza Edition cars are special variants of existing vehicles with unique liveries, enhanced Skill Trees, and built-in permanent bonuses that the standard version of the car doesn't have. They're some of the most valuable cars in FH6 for progression — the XP and Credits multipliers they carry can meaningfully accelerate your entire campaign.</p>
+
+    <p>In FH6 there are <strong>24 confirmed Forza Edition cars</strong> at launch, distributed through Festival Playlist milestones, seasonal championships, Wheelspins, and Forzathon Shop. None can be purchased in the Autoshow.</p>
+
+    <div class="info-box">
+      <div class="info-box-label">FE vs Standard</div>
+      <p>Forza Edition cars perform identically to their standard counterparts in races — the FE designation only adds visual uniqueness and the built-in bonus traits. You can still tune and upgrade them exactly like the base car.</p>
+    </div>
+
+    <h2>What Makes a Forza Edition Car Special</h2>
+    <p>Every Forza Edition car has at least one of the following permanent traits built in — active the moment you drive it, with no Skill Tree unlock required:</p>
+
+    <table class="summary-table">
+      <thead>
+        <tr><th>Trait Type</th><th>Bonus</th><th>Effect</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>XP Boost</td><td>+50% XP</td><td>All XP from races, events, and freeroam while in this car. Does stack with Skill Tree XP boosts.</td></tr>
+        <tr><td>Credits Boost</td><td>+50% CR</td><td>All credit rewards while driving this car. Huge for Championship grinding.</td></tr>
+        <tr><td>Skill Score Boost</td><td>+100% Skill Score</td><td>Doubles all Skill Chain score, meaning twice the SP per chain. Major SP farming accelerator.</td></tr>
+        <tr><td>Drift Bonus</td><td>+2× Drift Score</td><td>All drift skill types score double. Invaluable for Skill Chain farming in drift-capable FE cars.</td></tr>
+        <tr><td>Road Racing XP</td><td>+75% XP on road</td><td>XP bonus applies only on tarmac race events. Stronger than the base XP boost, tarmac-specific.</td></tr>
+        <tr><td>Off-Road XP</td><td>+75% XP off-road</td><td>Same but for dirt and cross-country events.</td></tr>
+      </tbody>
+    </table>
+
+    <p>FE cars also have an <strong>expanded Skill Tree</strong> — typically 2–4 additional nodes versus the standard version, including exclusive Super Wheelspins not available on the base car.</p>
+
+    <h2>All Confirmed Forza Edition Cars (Launch)</h2>
+    <p>Listed with their trait and unlock source. Note that Festival Playlist FE cars are time-limited — miss the season and they move to the Auction House or Wheelspins pool at lower odds.</p>
+
+    <div class="fe-list">
+
+      <div class="fe-card">
+        <div class="fe-card-top">
+          <div class="fe-accent-bar" style="background: rgba(232,255,71,0.6);"></div>
+          <div class="fe-car-info">
+            <div class="fe-car-name">2022 Porsche 911 GT3 RS Forza Edition</div>
+            <div class="fe-car-class">S1 900 — Road / Sports Car</div>
+            <div class="fe-traits">
+              <span class="fe-trait fe-trait-xp">+50% XP</span>
+              <span class="fe-trait fe-trait-skill">+100% Skill Score</span>
+            </div>
+            <span class="source-pill source-playlist">FESTIVAL PLAYLIST — SEASON 1</span>
+          </div>
+          <div class="fe-source"><span class="source-label">Priority</span>MUST GET</div>
+        </div>
+        <div class="fe-card-bottom">
+          <div class="fe-desc">The best road racing FE car at launch. Dual XP + Skill Score bonus makes every championship in this car more valuable. Season 1 Playlist reward at the 40-point milestone — prioritize this above anything else in the first season.</div>
+        </div>
+      </div>
+
+      <div class="fe-card">
+        <div class="fe-card-top">
+          <div class="fe-accent-bar" style="background: rgba(255,107,53,0.6);"></div>
+          <div class="fe-car-info">
+            <div class="fe-car-name">2001 Nissan Silvia S15 Spec R Forza Edition</div>
+            <div class="fe-car-class">A 800 — Sports Car / Drift</div>
+            <div class="fe-traits">
+              <span class="fe-trait fe-trait-drift">+2× Drift Score</span>
+              <span class="fe-trait fe-trait-skill">+100% Skill Score</span>
+            </div>
+            <span class="source-pill source-playlist">FESTIVAL PLAYLIST — SEASON 2</span>
+          </div>
+          <div class="fe-source"><span class="source-label">Priority</span>HIGH</div>
+        </div>
+        <div class="fe-card-bottom">
+          <div class="fe-desc">The premier SP farming car. Double Drift Score combined with the 100% Skill Score boost means a single 5× chain in a drift zone with this car generates more SP than any other setup in the game. Essential for players who want to unlock Skill Trees fast.</div>
+        </div>
+      </div>
+
+      <div class="fe-card">
+        <div class="fe-card-top">
+          <div class="fe-accent-bar" style="background: rgba(71,197,255,0.6);"></div>
+          <div class="fe-car-info">
+            <div class="fe-car-name">2021 Ford Bronco Badlands Forza Edition</div>
+            <div class="fe-car-class">B 700 — Off-Road</div>
+            <div class="fe-traits">
+              <span class="fe-trait fe-trait-xp">+75% Off-Road XP</span>
+              <span class="fe-trait fe-trait-cr">+50% CR</span>
+            </div>
+            <span class="source-pill source-wheelspins">SUPER WHEELSPIN</span>
+          </div>
+          <div class="fe-source"><span class="source-label">Priority</span>HIGH</div>
+        </div>
+        <div class="fe-card-bottom">
+          <div class="fe-desc">Best FE car for cross-country and dirt championship grinding. The +75% XP on off-road events accelerates your Wristband progression fastest if you're running through Discover Japan stamp activities, which are primarily off-road.</div>
+        </div>
+      </div>
+
+      <div class="fe-card">
+        <div class="fe-card-top">
+          <div class="fe-accent-bar" style="background: rgba(29,158,117,0.6);"></div>
+          <div class="fe-car-info">
+            <div class="fe-car-name">2020 Toyota Supra GR Forza Edition</div>
+            <div class="fe-car-class">S1 880 — Sports Car</div>
+            <div class="fe-traits">
+              <span class="fe-trait fe-trait-xp">+75% Road XP</span>
+            </div>
+            <span class="source-pill source-level">HORIZON LEVEL 100</span>
+          </div>
+          <div class="fe-source"><span class="source-label">Priority</span>MEDIUM</div>
+        </div>
+        <div class="fe-card-bottom">
+          <div class="fe-desc">Earned at Horizon Accolade Level 100 — a mid-game milestone, not early game. The road-specific XP bonus is excellent for Championship grinding, and the GR Supra is already a competitive race car without tuning.</div>
+        </div>
+      </div>
+
+      <div class="fe-card">
+        <div class="fe-card-top">
+          <div class="fe-accent-bar" style="background: rgba(186,117,23,0.6);"></div>
+          <div class="fe-car-info">
+            <div class="fe-car-name">2018 Lamborghini Huracán Performante Forza Edition</div>
+            <div class="fe-car-class">S2 998 — Hypercar</div>
+            <div class="fe-traits">
+              <span class="fe-trait fe-trait-cr">+50% CR</span>
+              <span class="fe-trait fe-trait-xp">+50% XP</span>
+            </div>
+            <span class="source-pill source-playlist">FESTIVAL PLAYLIST — SEASON 3</span>
+          </div>
+          <div class="fe-source"><span class="source-label">Priority</span>HIGH</div>
+        </div>
+        <div class="fe-card-bottom">
+          <div class="fe-desc">Dual XP/CR bonus on a legitimately fast S2 car. The best combination for making money while progressing. Season 3 Playlist reward — plan ahead so you have enough points ready when the season starts.</div>
+        </div>
+      </div>
+
+      <div class="fe-card">
+        <div class="fe-card-top">
+          <div class="fe-accent-bar" style="background: rgba(127,119,221,0.6);"></div>
+          <div class="fe-car-info">
+            <div class="fe-car-name">1999 Nissan Skyline GT-R V-Spec II Forza Edition</div>
+            <div class="fe-car-class">A 800 — Sports Car</div>
+            <div class="fe-traits">
+              <span class="fe-trait fe-trait-skill">+100% Skill Score</span>
+            </div>
+            <span class="source-pill source-wheelspins">REGULAR WHEELSPIN</span>
+          </div>
+          <div class="fe-source"><span class="source-label">Priority</span>HIGH</div>
+        </div>
+        <div class="fe-card-bottom">
+          <div class="fe-desc">Wheelspin-exclusive and the most accessible FE car. Single trait (Skill Score) but 100% boost is huge. The R34 is excellent for traffic-weaving and drift chains — this FE version doubles the SP output from every session. Likely your first FE car.</div>
+        </div>
+      </div>
+
+      <div class="fe-card">
+        <div class="fe-card-top">
+          <div class="fe-accent-bar" style="background: rgba(255,77,77,0.6);"></div>
+          <div class="fe-car-info">
+            <div class="fe-car-name">2022 Ferrari 296 GTB Forza Edition</div>
+            <div class="fe-car-class">S2 930 — Sports Car</div>
+            <div class="fe-traits">
+              <span class="fe-trait fe-trait-xp">+50% XP</span>
+            </div>
+            <span class="source-pill source-playlist">FESTIVAL PLAYLIST — SEASON 4</span>
+          </div>
+          <div class="fe-source"><span class="source-label">Priority</span>MEDIUM</div>
+        </div>
+        <div class="fe-card-bottom">
+          <div class="fe-desc">Single XP trait, but the 296 GTB is one of the strongest road racing cars in S2. Great for later-game campaign completion when you need XP and performance simultaneously. Season 4 — keep Playlist Points saved.</div>
+        </div>
+      </div>
+
+      <div class="fe-card">
+        <div class="fe-card-top">
+          <div class="fe-accent-bar" style="background: rgba(232,255,71,0.4);"></div>
+          <div class="fe-car-info">
+            <div class="fe-car-name">2020 Koenigsegg Jesko Forza Edition</div>
+            <div class="fe-car-class">R 999 — Hypercar</div>
+            <div class="fe-traits">
+              <span class="fe-trait fe-trait-cr">+50% CR</span>
+              <span class="fe-trait fe-trait-skill">+100% Skill Score</span>
+            </div>
+            <span class="source-pill source-wheelspins">SUPER WHEELSPIN (RARE)</span>
+          </div>
+          <div class="fe-source"><span class="source-label">Priority</span>CHASE</div>
+        </div>
+        <div class="fe-card-bottom">
+          <div class="fe-desc">The rarest FE car at launch. Super Wheelspin exclusive with very low drop rate. Credits + Skill Score on the fastest drag car means this prints money on top-tier S2/R events. If it shows in the Auction House, it commands 5–15 million credits.</div>
+        </div>
+      </div>
+
+    </div>
+
+    <h2>How to Get Forza Edition Cars</h2>
+    <p>There are four sources for FE cars in FH6:</p>
+
+    <h3>1. Festival Playlist Milestones</h3>
+    <p>Each seasonal playlist has two milestone rewards at 20 points and 40 points. At least one milestone per season awards either a car or a Super Wheelspin. FE cars appear regularly as the 40-point reward — these are <strong>time-limited and permanently available only during that season</strong>. After the season ends, the car may enter the Wheelspin pool or the Auction House.</p>
+
+    <h3>2. Wheelspins & Super Wheelspins</h3>
+    <p>Many FE cars are in the general Wheelspin prize pool. Super Wheelspins have a higher FE car drop rate than regular Wheelspins. The fastest way to get Super Wheelspins early is to unlock them from Car Mastery trees — use Skill Points on Wheelspin nodes for your most-driven cars first.</p>
+
+    <h3>3. Forzathon Shop</h3>
+    <p>The Forzathon Shop rotates weekly alongside the Festival Playlist. It sometimes lists FE cars for Forzathon Points (earned from Forzathon Events and Daily Challenges). Check it every Thursday reset — FE cars listed here cost 300–600 FP.</p>
+
+    <h3>4. Auction House</h3>
+    <p>FE cars already owned by other players can appear in the Auction House. Supply is limited and demand is high — expect to pay 2–15× the buyout price of a non-FE equivalent. The Auction House fee is 15%, so factor that into bids.</p>
+
+    <div class="tip-box">
+      <div class="tip-box-label">Auction House Timing</div>
+      <p>FE cars appear most often in the Auction House in the 24–48 hours after a new season starts, when players who already have a duplicate list their spare. Thursday evenings (UTC) right after the weekly reset are the best time to search.</p>
+    </div>
+
+    <h2>Stacking FE Bonuses</h2>
+    <p>FE car bonuses stack with Car Mastery Tree bonuses and any active in-game boosts:</p>
+
+    <ul>
+      <li><strong>FE +50% XP</strong> + <strong>Mastery Tree +30% XP</strong> = effectively +80% XP total</li>
+      <li><strong>FE +100% Skill Score</strong> + active <strong>Skill Song</strong> = 4× total Skill Score (2× from FE, 2× from Skill Song)</li>
+      <li><strong>FE +50% CR</strong> + <strong>Mastery Tree +30% CR</strong> + <strong>Festival Events CR bonus</strong> = maximum Credits income</li>
+    </ul>
+
+    <p>The optimal progression setup for new players: use your <strong>XP FE car</strong> for Wristband championship events, and switch to the <strong>Skill Score FE car</strong> between races when free-roaming. This lets you use each car's bonus in the context where it creates the most value.</p>
+  </div>
+</article>
+
+<!-- SIDEBAR -->
+<aside class="sidebar">
+  <div class="sidebar-card">
+    <div class="sidebar-card-head">On this page</div>
+    <nav class="toc">
+      <a href="#what-makes-fe-special">What Makes FE Special</a>
+      <a href="#all-fe-cars">All Confirmed FE Cars</a>
+      <a href="#how-to-get">How to Get FE Cars</a>
+      <a href="#stacking">Stacking FE Bonuses</a>
+    </nav>
+  </div>
+
+  <div class="sidebar-card">
+    <div class="sidebar-card-head">FE at a glance</div>
+    <div class="reward-box">
+      <div class="reward-row"><span class="reward-label">FE cars at launch</span><span class="reward-val">24 TOTAL</span></div>
+      <div class="reward-row"><span class="reward-label">Max XP Boost</span><span class="reward-val">+75%</span></div>
+      <div class="reward-row"><span class="reward-label">Max Skill Score Boost</span><span class="reward-val">+100%</span></div>
+      <div class="reward-row"><span class="reward-label">Max CR Boost</span><span class="reward-val">+50%</span></div>
+      <div class="reward-row"><span class="reward-label">In Autoshow?</span><span class="reward-val">NEVER</span></div>
+    </div>
+  </div>
+
+  <div class="sidebar-card">
+    <div class="sidebar-card-head">FE Trait Types</div>
+    <div style="padding:14px;display:flex;flex-direction:column;gap:8px;">
+      <span class="fe-trait fe-trait-xp" style="font-size:11px;padding:5px 10px;">+50% XP / +75% Road/Off-Road XP</span>
+      <span class="fe-trait fe-trait-cr" style="font-size:11px;padding:5px 10px;">+50% Credits</span>
+      <span class="fe-trait fe-trait-skill" style="font-size:11px;padding:5px 10px;">+100% Skill Score</span>
+      <span class="fe-trait fe-trait-drift" style="font-size:11px;padding:5px 10px;">+2× Drift Score</span>
+    </div>
+  </div>
+
+  <div class="sidebar-card">
+    <div class="sidebar-card-head">Related guides</div>
+    <ul class="sidebar-links">
+      <li><a href="festival-playlist.html">Festival Playlist<span>→</span></a></li>
+      <li><a href="skill-points-guide.html">Skill Points Guide<span>→</span></a></li>
+      <li><a href="auction-house.html">Auction House Guide<span>→</span></a></li>
+      <li><a href="car-tier-list.html">Car Tier List<span>→</span></a></li>
+      <li><a href="xp-credits-farming.html">XP & Credits Farming<span>→</span></a></li>
+    </ul>
+  </div>
+</aside>
+
+</div>
+</div>
+
+<footer>
+  <div>
+    <div class="footer-logo">FH6<span>Guide</span></div>
+    <div class="footer-note" style="margin-top:6px;">Fan-made guide site · Not affiliated with Playground Games or Xbox Game Studios</div>
+  </div>
+  <ul class="footer-links">
+    <li><a href="#">About</a></li>
+    <li><a href="#">Submit a guide</a></li>
+    <li><a href="#">Contact</a></li>
+    <li><a href="#">Privacy</a></li>
+  </ul>
+</footer>
+
+<script>
+function toggleNav(){document.getElementById('navDrawer').classList.toggle('open')}
+document.addEventListener('click',function(e){
+  var d=document.getElementById('navDrawer'),b=document.querySelector('.nav-hamburger');
+  if(d&&d.classList.contains('open')&&!d.contains(e.target)&&b&&!b.contains(e.target))
+    d.classList.remove('open')
+});
+document.querySelectorAll('.nav-drawer a').forEach(function(a){
+  a.addEventListener('click',function(){document.getElementById('navDrawer').classList.remove('open')})
+});
+</script>
+</body>
+</html>

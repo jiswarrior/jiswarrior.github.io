@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Forza Horizon 6 Best Cars by Event Type 2026 — Road, Dirt, Drag & Drift | FH6Guide</title>
+<meta name="description" content="The best cars in FH6 for every event type. Top picks for road racing, dirt/cross-country, drag racing, drift events, and Touge battles — with class breakdowns from B to S2.">
+<link rel="canonical" href="https://www.fh6guide.org/best-cars-by-type.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Mono:wght@300;400;500&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg:        #0a0a0c;
+  --bg2:       #111116;
+  --bg3:       #18181f;
+  --bg4:       #1f1f28;
+  --border:    rgba(255,255,255,0.07);
+  --border2:   rgba(255,255,255,0.12);
+  --accent:    #e8ff47;
+  --accent2:   #ff6b35;
+  --accent3:   #47c5ff;
+  --text:      #f0efe8;
+  --muted:     #7a7a88;
+  --muted2:    #4a4a58;
+  --green:     #1D9E75;
+  --amber:     #BA7517;
+  --red:       #ff4d4d;
+  --purple:    #7F77DD;
+  --section-color: #47c5ff;
+  --font-disp: 'Bebas Neue', sans-serif;
+  --font-body: 'DM Sans', sans-serif;
+  --font-mono: 'DM Mono', monospace;
+}
+
+html { scroll-behavior: smooth; }
+body { background: var(--bg); color: var(--text); font-family: var(--font-body); font-size: 15px; line-height: 1.6; min-height: 100vh; overflow-x: hidden; }
+a { color: inherit; text-decoration: none; }
+
+/* NAV */
+nav { position: sticky; top: 0; z-index: 100; background: rgba(10,10,12,0.92); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); padding: 0 2rem; display: flex; align-items: center; gap: 2rem; height: 52px; }
+.nav-logo { font-family: var(--font-disp); font-size: 22px; letter-spacing: .04em; color: var(--accent); flex-shrink: 0; }
+.nav-logo span { color: var(--text); }
+.nav-links { display: flex; gap: 0; list-style: none; flex: 1; }
+.nav-links a { display: block; padding: 0 14px; height: 52px; line-height: 52px; font-size: 13px; font-weight: 500; color: var(--muted); letter-spacing: .03em; transition: color .15s; white-space: nowrap; }
+.nav-links a:hover { color: var(--text); }
+.nav-links a.active { color: var(--accent); }
+.nav-search { margin-left: auto; display: flex; align-items: center; gap: 8px; background: var(--bg3); border: 1px solid var(--border2); border-radius: 6px; padding: 0 12px; height: 34px; cursor: text; flex-shrink: 0; }
+.nav-search input { background: none; border: none; outline: none; color: var(--text); font-family: var(--font-body); font-size: 13px; width: 180px; }
+.nav-search input::placeholder { color: var(--muted2); }
+.nav-search svg { color: var(--muted); flex-shrink: 0; }
+.nav-hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; margin-left: auto; padding: 6px; flex-shrink: 0; }
+.nav-hamburger span { display: block; width: 22px; height: 2px; background: var(--text); border-radius: 2px; }
+.nav-drawer { display: none; position: fixed; top: 52px; left: 0; right: 0; background: rgba(10,10,12,0.98); border-bottom: 1px solid var(--border2); padding: 12px 0 20px; z-index: 99; flex-direction: column; }
+.nav-drawer.open { display: flex; }
+.nav-drawer a { padding: 12px 2rem; font-size: 15px; font-weight: 500; color: var(--muted); display: block; transition: color .15s; }
+.nav-drawer a:hover { color: var(--text); }
+.nav-drawer a.active { color: var(--accent); }
+.nav-drawer-search { margin: 12px 2rem 0; display: flex; align-items: center; gap: 8px; background: var(--bg3); border: 1px solid var(--border2); border-radius: 6px; padding: 0 12px; height: 40px; }
+.nav-drawer-search input { background: none; border: none; outline: none; color: var(--text); font-family: var(--font-body); font-size: 14px; flex: 1; }
+.nav-drawer-search input::placeholder { color: var(--muted2); }
+
+.page-wrap { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+
+.breadcrumb { display: flex; align-items: center; gap: 8px; font-family: var(--font-mono); font-size: 11px; color: var(--muted); padding: 14px 0; letter-spacing: .04em; }
+.breadcrumb a { color: var(--muted); transition: color .15s; }
+.breadcrumb a:hover { color: var(--text); }
+
+.content-wrap { display: grid; grid-template-columns: 1fr 268px; gap: 40px; padding: 36px 0 60px; }
+
+.article-eyebrow { font-family: var(--font-mono); font-size: 11px; color: var(--section-color); letter-spacing: .1em; text-transform: uppercase; margin-bottom: 12px; display: flex; align-items: center; gap: 10px; }
+.article-eyebrow::before { content: ''; display: block; width: 20px; height: 1px; background: var(--section-color); }
+.article-title { font-family: var(--font-disp); font-size: clamp(36px, 6vw, 58px); line-height: .95; letter-spacing: .02em; margin-bottom: 16px; }
+.article-title span { color: var(--section-color); }
+.article-meta { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; font-family: var(--font-mono); font-size: 10px; color: var(--muted); letter-spacing: .06em; margin-bottom: 28px; padding-bottom: 24px; border-bottom: 1px solid var(--border); }
+.article-meta-dot { width: 3px; height: 3px; border-radius: 50%; background: var(--muted2); }
+
+.tag { font-family: var(--font-mono); font-size: 9px; letter-spacing: .08em; text-transform: uppercase; padding: 3px 7px; border-radius: 4px; border: 1px solid; }
+.tag-cars    { color: var(--accent3); border-color: rgba(71,197,255,0.3); background: rgba(71,197,255,0.08); }
+.tag-hot     { color: var(--red); border-color: rgba(255,77,77,0.3); background: rgba(255,77,77,0.08); }
+
+/* EVENT TYPE TABS */
+.type-tabs { display: flex; gap: 0; border-bottom: 1px solid var(--border2); margin-bottom: 28px; overflow-x: auto; }
+.type-tab {
+  font-family: var(--font-mono); font-size: 11px; letter-spacing: .08em; text-transform: uppercase;
+  padding: 10px 16px; cursor: pointer; color: var(--muted); border-bottom: 2px solid transparent;
+  transition: color .15s, border-color .15s; white-space: nowrap; background: none; border-left: none; border-right: none; border-top: none;
+}
+.type-tab:hover { color: var(--text); }
+.type-tab.active { color: var(--accent); border-bottom-color: var(--accent); }
+
+.type-section { display: none; }
+.type-section.active { display: block; }
+
+.prose { color: var(--text); }
+.prose h2 { font-family: var(--font-disp); font-size: 26px; letter-spacing: .04em; margin: 36px 0 14px; color: var(--text); display: flex; align-items: center; gap: 12px; }
+.prose h2::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+.prose h3 { font-size: 15px; font-weight: 500; margin: 24px 0 8px; color: var(--text); }
+.prose p { color: var(--muted); line-height: 1.7; margin-bottom: 14px; font-size: 14px; }
+.prose p strong { color: var(--text); font-weight: 500; }
+
+/* CAR CARDS */
+.car-list { display: flex; flex-direction: column; gap: 8px; margin: 16px 0; }
+.car-card {
+  background: var(--bg2); border: 1px solid var(--border); border-radius: 8px;
+  padding: 14px 16px; display: grid; grid-template-columns: auto 1fr auto; gap: 14px;
+  align-items: center; transition: border-color .2s;
+}
+.car-card:hover { border-color: var(--border2); }
+.car-rank {
+  font-family: var(--font-disp); font-size: 32px; color: var(--muted2);
+  line-height: 1; width: 32px; text-align: center;
+}
+.car-rank.gold { color: var(--accent); }
+.car-rank.silver { color: var(--muted); }
+.car-info { flex: 1; }
+.car-name { font-weight: 500; font-size: 14px; margin-bottom: 2px; }
+.car-sub { font-size: 12px; color: var(--muted); line-height: 1.4; }
+.car-badges { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 6px; }
+.car-badge {
+  font-family: var(--font-mono); font-size: 9px; padding: 2px 7px;
+  border-radius: 3px; letter-spacing: .06em;
+}
+.badge-class-s2 { background: rgba(255,77,77,0.1); border: 1px solid rgba(255,77,77,0.25); color: var(--red); }
+.badge-class-s1 { background: rgba(232,255,71,0.08); border: 1px solid rgba(232,255,71,0.2); color: var(--accent); }
+.badge-class-a  { background: rgba(71,197,255,0.08); border: 1px solid rgba(71,197,255,0.2); color: var(--accent3); }
+.badge-class-b  { background: rgba(29,158,117,0.08); border: 1px solid rgba(29,158,117,0.2); color: var(--green); }
+.badge-class-r  { background: rgba(127,119,221,0.08); border: 1px solid rgba(127,119,221,0.2); color: var(--purple); }
+.car-stats { text-align: right; }
+.car-stat-val { font-family: var(--font-disp); font-size: 22px; color: var(--accent3); line-height: 1; }
+.car-stat-lbl { font-family: var(--font-mono); font-size: 9px; color: var(--muted); letter-spacing: .06em; }
+
+/* CLASS FILTER BAR */
+.class-bar { display: flex; gap: 8px; margin-bottom: 20px; flex-wrap: wrap; }
+.class-pill {
+  font-family: var(--font-mono); font-size: 10px; letter-spacing: .08em;
+  padding: 4px 10px; border-radius: 4px; border: 1px solid var(--border2);
+  color: var(--muted); background: var(--bg2); cursor: pointer;
+}
+.class-pill.active-s2 { background: rgba(255,77,77,0.1); border-color: rgba(255,77,77,0.3); color: var(--red); }
+.class-pill.active-s1 { background: rgba(232,255,71,0.08); border-color: rgba(232,255,71,0.25); color: var(--accent); }
+.class-pill.active-a  { background: rgba(71,197,255,0.08); border-color: rgba(71,197,255,0.25); color: var(--accent3); }
+.class-pill.active-b  { background: rgba(29,158,117,0.08); border-color: rgba(29,158,117,0.25); color: var(--green); }
+
+/* TIP BOX */
+.tip-box { background: rgba(71,197,255,0.06); border: 1px solid rgba(71,197,255,0.2); border-left: 3px solid var(--accent3); border-radius: 0 6px 6px 0; padding: 14px 16px; margin: 20px 0; }
+.tip-box-label { font-family: var(--font-mono); font-size: 10px; color: var(--accent3); letter-spacing: .1em; text-transform: uppercase; margin-bottom: 6px; }
+.tip-box p { color: var(--muted); font-size: 13px; margin: 0; }
+
+.warn-box { background: rgba(232,255,71,0.05); border: 1px solid rgba(232,255,71,0.15); border-left: 3px solid var(--accent); border-radius: 0 6px 6px 0; padding: 14px 16px; margin: 20px 0; }
+.warn-box-label { font-family: var(--font-mono); font-size: 10px; color: var(--accent); letter-spacing: .1em; text-transform: uppercase; margin-bottom: 6px; }
+.warn-box p { color: var(--muted); font-size: 13px; margin: 0; }
+
+/* STAT COMPARISON */
+.stat-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; margin: 16px 0; }
+.stat-cell { background: var(--bg2); border: 1px solid var(--border); border-radius: 8px; padding: 14px; text-align: center; }
+.stat-cell-val { font-family: var(--font-disp); font-size: 28px; letter-spacing: .04em; line-height: 1; margin-bottom: 4px; }
+.stat-cell-lbl { font-family: var(--font-mono); font-size: 10px; color: var(--muted); letter-spacing: .06em; text-transform: uppercase; }
+
+/* SIDEBAR */
+.sidebar { display: flex; flex-direction: column; gap: 16px; }
+.sidebar-card { background: var(--bg2); border: 1px solid var(--border); border-radius: 10px; overflow: hidden; }
+.sidebar-card-head { padding: 12px 14px; border-bottom: 1px solid var(--border); font-family: var(--font-mono); font-size: 10px; color: var(--muted); letter-spacing: .08em; text-transform: uppercase; display: flex; align-items: center; gap: 8px; }
+.sidebar-card-head::before { content: ''; width: 3px; height: 3px; border-radius: 50%; background: var(--section-color); }
+.sidebar-links { list-style: none; }
+.sidebar-links li a { display: flex; align-items: center; justify-content: space-between; padding: 9px 14px; font-size: 13px; color: var(--muted); border-bottom: 1px solid var(--border); transition: color .15s, background .15s; }
+.sidebar-links li:last-child a { border-bottom: none; }
+.sidebar-links li a:hover { color: var(--text); background: var(--bg3); }
+.sidebar-links li a span { font-family: var(--font-mono); font-size: 10px; color: var(--muted2); }
+.toc { padding: 14px; }
+.toc a { display: block; font-size: 12px; color: var(--muted); padding: 5px 0 5px 12px; border-left: 1px solid var(--border2); transition: color .15s, border-color .15s; line-height: 1.4; }
+.toc a:hover { color: var(--text); border-left-color: var(--section-color); }
+.reward-box { padding: 14px; }
+.reward-row { display: flex; align-items: center; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid var(--border); font-size: 13px; }
+.reward-row:last-child { border-bottom: none; }
+.reward-label { color: var(--muted); }
+.reward-val { font-family: var(--font-mono); font-size: 12px; color: var(--accent3); letter-spacing: .04em; }
+
+footer { border-top: 1px solid var(--border); padding: 36px 2rem; display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+.footer-logo { font-family: var(--font-disp); font-size: 18px; letter-spacing: .04em; color: var(--accent); }
+.footer-logo span { color: var(--muted); }
+.footer-note { font-family: var(--font-mono); font-size: 10px; color: var(--muted2); letter-spacing: .06em; }
+.footer-links { display: flex; gap: 20px; list-style: none; }
+.footer-links a { font-size: 12px; color: var(--muted); transition: color .15s; }
+.footer-links a:hover { color: var(--text); }
+
+@media(max-width:768px){
+  .nav-links,.nav-search{display:none}
+  .nav-hamburger{display:flex}
+  .page-wrap{padding:0 1.25rem}
+  .content-wrap{grid-template-columns:1fr;gap:0}
+  .sidebar{margin-top:32px;border-top:1px solid var(--border);padding-top:24px}
+  .article-title{font-size:clamp(28px,10vw,44px)}
+  .prose h2{font-size:22px}
+  .car-card{grid-template-columns:auto 1fr}
+  .car-stats{display:none}
+  .stat-grid{grid-template-columns:1fr 1fr}
+  footer{flex-direction:column;align-items:flex-start;padding:28px 1.25rem;gap:16px}
+  .footer-links{flex-wrap:wrap;gap:14px}
+}
+@media(max-width:480px){
+  .stat-grid{grid-template-columns:1fr}
+  .type-tabs{gap:0}
+  .type-tab{padding:10px 12px;font-size:10px}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">FH6<span>Guide</span></a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="getting-started.html">Getting Started</a></li>
+    <li><a href="car-tier-list.html" class="active">Cars & Garage</a></li>
+    <li><a href="barn-finds.html">Collectibles</a></li>
+    <li><a href="progression.html">Progression</a></li>
+    <li><a href="tuning-guide.html">Advanced</a></li>
+  </ul>
+  <div class="nav-search">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+    <input type="text" placeholder="Search guides…">
+  </div>
+  <button class="nav-hamburger" onclick="toggleNav()" aria-label="Open menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="nav-drawer" id="navDrawer">
+  <a href="index.html">Home</a>
+  <a href="getting-started.html">Getting Started</a>
+  <a href="car-tier-list.html" class="active">Cars &amp; Garage</a>
+  <a href="barn-finds.html">Collectibles</a>
+  <a href="progression.html">Progression</a>
+  <a href="tuning-guide.html">Advanced</a>
+  <div class="nav-drawer-search">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+    <input type="text" placeholder="Search guides…">
+  </div>
+</div>
+
+<div class="page-wrap">
+  <div class="breadcrumb">
+    <a href="index.html">Home</a>
+    <span style="color:var(--muted2)">/</span>
+    <a href="car-tier-list.html">Cars & Garage</a>
+    <span style="color:var(--muted2)">/</span>
+    Best Cars by Event Type
+  </div>
+</div>
+
+<div class="page-wrap">
+<div class="content-wrap">
+
+<article>
+  <div class="article-eyebrow">Cars & Garage</div>
+  <h1 class="article-title">Best Cars<br>by <span>Event Type</span></h1>
+
+  <div class="article-meta">
+    <span class="tag tag-cars">Cars</span>
+    <span class="tag tag-hot">Hot</span>
+    <div class="article-meta-dot"></div>
+    <span>Updated May 21, 2026</span>
+    <div class="article-meta-dot"></div>
+    <span>~9 min read</span>
+  </div>
+
+  <div class="prose">
+    <p>The best car for a road race is rarely the best car for cross-country. FH6's Japan map rewards specialization — tight mountain touge, high-speed coastal highways, off-road volcanic terrain, and urban drift zones all demand different handling profiles. This guide breaks down the top choices for each event category, across multiple classes so budget isn't a barrier.</p>
+
+    <div class="warn-box">
+      <div class="warn-box-label">Class Note</div>
+      <p>All recommendations are based on stock performance index. Tuning can move cars up a tier. See the <a href="tuning-guide.html" style="color:var(--accent)">Tuning Guide</a> for class-to-class upgrade paths.</p>
+    </div>
+  </div>
+
+  <!-- TABS -->
+  <div class="type-tabs">
+    <button class="type-tab active" onclick="showType('road', this)">🏁 Road Racing</button>
+    <button class="type-tab" onclick="showType('dirt', this)">🌿 Dirt / Cross-Country</button>
+    <button class="type-tab" onclick="showType('drag', this)">⚡ Drag Racing</button>
+    <button class="type-tab" onclick="showType('drift', this)">💨 Drift</button>
+    <button class="type-tab" onclick="showType('touge', this)">⛰️ Touge</button>
+  </div>
+
+  <!-- ROAD RACING -->
+  <div class="type-section active" id="type-road">
+    <div class="prose">
+      <p>FH6's road circuits favor <strong>high cornering grip, balanced AWD or RWD, and strong top-end speed</strong>. Japan's highways are long, with flowing bends rather than hairpins — cars that lose speed mid-corner suffer more than on a tight European circuit.</p>
+    </div>
+
+    <div class="stat-grid">
+      <div class="stat-cell"><div class="stat-cell-val" style="color:var(--accent3)">AWD</div><div class="stat-cell-lbl">Preferred drivetrain</div></div>
+      <div class="stat-cell"><div class="stat-cell-val" style="color:var(--accent)">S1/S2</div><div class="stat-cell-lbl">Most competitive classes</div></div>
+      <div class="stat-cell"><div class="stat-cell-val" style="color:var(--accent2)">260+</div><div class="stat-cell-lbl">Target top speed (mph)</div></div>
+    </div>
+
+    <div class="car-list">
+      <div class="car-card">
+        <div class="car-rank gold">1</div>
+        <div class="car-info">
+          <div class="car-name">2022 Porsche 911 GT3 RS (992)</div>
+          <div class="car-sub">Textbook road car. Exceptional mid-corner grip, flat through high-speed bends, rear-engine balance helps rotation. Best in class for tarmac circuits.</div>
+          <div class="car-badges"><span class="car-badge badge-class-s1">S1</span><span class="car-badge badge-class-s2">S2</span></div>
+        </div>
+        <div class="car-stats"><div class="car-stat-val">9.4</div><div class="car-stat-lbl">Road Score</div></div>
+      </div>
+      <div class="car-card">
+        <div class="car-rank gold">2</div>
+        <div class="car-info">
+          <div class="car-name">2020 Lamborghini Huracán EVO AWD</div>
+          <div class="car-sub">AWD traction off corners, 631hp engine, and surprisingly good steering feel for the class. Dominates mid-length circuits.</div>
+          <div class="car-badges"><span class="car-badge badge-class-s1">S1</span></div>
+        </div>
+        <div class="car-stats"><div class="car-stat-val">9.2</div><div class="car-stat-lbl">Road Score</div></div>
+      </div>
+      <div class="car-card">
+        <div class="car-rank silver">3</div>
+        <div class="car-info">
+          <div class="car-name">2021 Aston Martin Vantage F1 Edition</div>
+          <div class="car-sub">Slightly lower PI ceiling but excellent aerodynamics and super-stiff suspension make it ultra-predictable. Great choice for players who prefer consistency over peak speed.</div>
+          <div class="car-badges"><span class="car-badge badge-class-a">A</span><span class="car-badge badge-class-s1">S1</span></div>
+        </div>
+        <div class="car-stats"><div class="car-stat-val">9.0</div><div class="car-stat-lbl">Road Score</div></div>
+      </div>
+      <div class="car-card">
+        <div class="car-rank silver">4</div>
+        <div class="car-info">
+          <div class="car-name">2016 Dodge Viper ACR</div>
+          <div class="car-sub">Budget option in B/A class. Huge rear grip from the ACR aero kit, manageable oversteer. One of the best value road racers if you're early in progression.</div>
+          <div class="car-badges"><span class="car-badge badge-class-b">B</span><span class="car-badge badge-class-a">A</span></div>
+        </div>
+        <div class="car-stats"><div class="car-stat-val">8.8</div><div class="car-stat-lbl">Road Score</div></div>
+      </div>
+      <div class="car-card">
+        <div class="car-rank">5</div>
+        <div class="car-info">
+          <div class="car-name">2022 Ferrari 296 GTB</div>
+          <div class="car-sub">Hybrid power means instant torque, useful in technical sections. High-revving character rewards aggressive driving. Strong at longer circuits in Ohtani and Nangan.</div>
+          <div class="car-badges"><span class="car-badge badge-class-s1">S1</span><span class="car-badge badge-class-s2">S2</span></div>
+        </div>
+        <div class="car-stats"><div class="car-stat-val">8.7</div><div class="car-stat-lbl">Road Score</div></div>
+      </div>
+    </div>
+
+    <div class="tip-box">
+      <div class="tip-box-label">Road Racing Tip</div>
+      <p>For championship events on Japan's motorways (Minamino → Nangan coastal route), AWD setup is a 0.5–1.5 second per lap advantage over RWD in the same PI class due to the constant-radius high-speed corners.</p>
+    </div>
+  </div>
+
+  <!-- DIRT / CROSS-COUNTRY -->
+  <div class="type-section" id="type-dirt">
+    <div class="prose">
+      <p>Cross-country and dirt races take you through <strong>Hokubu's snow plains, Shimanoyama's forest stages, and Takashiro's mountain trails</strong>. Ground clearance, suspension travel, and AWD are non-negotiable at high class. Rally suspension tuning matters more here than in any other event type.</p>
+    </div>
+
+    <div class="stat-grid">
+      <div class="stat-cell"><div class="stat-cell-val" style="color:var(--accent3)">AWD</div><div class="stat-cell-lbl">Only viable drivetrain</div></div>
+      <div class="stat-cell"><div class="stat-cell-val" style="color:var(--accent)">A/S1</div><div class="stat-cell-lbl">Optimal class range</div></div>
+      <div class="stat-cell"><div class="stat-cell-val" style="color:var(--green)">High</div><div class="stat-cell-lbl">Clearance priority</div></div>
+    </div>
+
+    <div class="car-list">
+      <div class="car-card">
+        <div class="car-rank gold">1</div>
+        <div class="car-info">
+          <div class="car-name">2021 Volkswagen Amarok</div>
+          <div class="car-sub">Truck-based platform gives it genuine off-road geometry. Massive travel, stable at speed over rough terrain. Dominant in cross-country championships.</div>
+          <div class="car-badges"><span class="car-badge badge-class-a">A</span><span class="car-badge badge-class-s1">S1</span></div>
+        </div>
+        <div class="car-stats"><div class="car-stat-val">9.3</div><div class="car-stat-lbl">Dirt Score</div></div>
+      </div>
+      <div class="car-card">
+        <div class="car-rank gold">2</div>
+        <div class="car-info">
+          <div class="car-name">2021 Jeep Wrangler Rubicon 392</div>
+          <div class="car-sub">Iconic choice. 470hp V8, short wheelbase, and legendary off-road suspension. Works best in terrain-heavy events with lots of obstacles rather than pure speed stages.</div>
+          <div class="car-badges"><span class="car-badge badge-class-b">B</span><span class="car-badge badge-class-a">A</span></div>
+        </div>
+        <div class="car-stats"><div class="car-stat-val">9.1</div><div class="car-stat-lbl">Dirt Score</div></div>
+      </div>
+      <div class="car-card">
+        <div class="car-rank silver">3</div>
+        <div class="car-info">
+          <div class="car-name">2019 Ford Ranger Raptor</div>
+          <div class="car-sub">Speed-oriented off-roader. The long travel Fox suspension handles high-speed dirt runs better than the Wrangler. Best for open cross-country events in Hokubu.</div>
+          <div class="car-badges"><span class="car-badge badge-class-a">A</span></div>
+        </div>
+        <div class="car-stats"><div class="car-stat-val">8.9</div><div class="car-stat-lbl">Dirt Score</div></div>
+      </div>
+      <div class="car-card">
+        <div class="car-rank silver">4</div>
+        <div class="car-info">
+          <div class="car-name">1997 Mitsubishi Montero Evolution</div>
+          <div class="car-sub">Also one of the Barn Find rewards. Lower PI ceiling but exceptional handling balance. Feels like a proper rally SUV — responsive and predictable on any surface.</div>
+          <div class="car-badges"><span class="car-badge badge-class-b">B</span><span class="car-badge badge-class-a">A</span></div>
+        </div>
+        <div class="car-stats"><div class="car-stat-val">8.7</div><div class="car-stat-lbl">Dirt Score</div></div>
+      </div>
+    </div>
+
+    <div class="tip-box">
+      <div class="tip-box-label">Dirt Setup Tip</div>
+      <p>For cross-country in Hokubu and Takashiro, add rally suspension, all-terrain tires, and lift the ride height 2 clicks above default. This prevents bottoming out on rocky terrain and improves stability on snow without hurting tarmac lap times significantly.</p>
+    </div>
+  </div>
+
+  <!-- DRAG RACING -->
+  <div class="type-section" id="type-drag">
+    <div class="prose">
+      <p>FH6 has dedicated <strong>Drag Meet</strong> zones in Tokyo City and Minamino with quarter-mile and half-mile strips. Drag racing here rewards pure straight-line engineering — launch control tuning, gear ratios, and tire type matter enormously. AWD dominates the 0–60 window; RWD with a good tune can win half-mile events.</p>
+    </div>
+
+    <div class="stat-grid">
+      <div class="stat-cell"><div class="stat-cell-val" style="color:var(--accent3)">AWD</div><div class="stat-cell-lbl">Best for short drag</div></div>
+      <div class="stat-cell"><div class="stat-cell-val" style="color:var(--red)">RWD</div><div class="stat-cell-lbl">Best for half-mile</div></div>
+      <div class="stat-cell"><div class="stat-cell-val" style="color:var(--accent)">S2/R</div><div class="stat-cell-lbl">Top drag classes</div></div>
+    </div>
+
+    <div class="car-list">
+      <div class="car-card">
+        <div class="car-rank gold">1</div>
+        <div class="car-info">
+          <div class="car-name">2020 Koenigsegg Jesko</div>
+          <div class="car-sub">Over 1,600hp, 9-speed multi-clutch transmission that shifts faster than a human can blink. Unmatched top-end pull. The benchmark for S2/R-class drag.</div>
+          <div class="car-badges"><span class="car-badge badge-class-s2">S2</span><span class="car-badge badge-class-r">R</span></div>
+        </div>
+        <div class="car-stats"><div class="car-stat-val">9.8</div><div class="car-stat-lbl">Drag Score</div></div>
+      </div>
+      <div class="car-card">
+        <div class="car-rank gold">2</div>
+        <div class="car-info">
+          <div class="car-name">2018 Bugatti Chiron Super Sport 300+</div>
+          <div class="car-sub">Not as fast off the line as the Jesko but extremely stable at over 250 mph. Better for longer strips where top speed is the limiting factor.</div>
+          <div class="car-badges"><span class="car-badge badge-class-s2">S2</span><span class="car-badge badge-class-r">R</span></div>
+        </div>
+        <div class="car-stats"><div class="car-stat-val">9.5</div><div class="car-stat-lbl">Drag Score</div></div>
+      </div>
+      <div class="car-card">
+        <div class="car-rank silver">3</div>
+        <div class="car-info">
+          <div class="car-name">2017 Dodge Challenger SRT Demon</div>
+          <div class="car-sub">The value king for drag. Factory launch control, 840hp supercharged V8, and drag-specific suspension geometry. Best RWD S1-class drag car in the game.</div>
+          <div class="car-badges"><span class="car-badge badge-class-s1">S1</span></div>
+        </div>
+        <div class="car-stats"><div class="car-stat-val">9.2</div><div class="car-stat-lbl">Drag Score</div></div>
+      </div>
+      <div class="car-card">
+        <div class="car-rank silver">4</div>
+        <div class="car-info">
+          <div class="car-name">2020 Rimac C_Two</div>
+          <div class="car-sub">All-electric, 1,914hp, AWD. Instant torque from standstill and a sophisticated torque-vectoring system make it near-unbeatable in the 0–100 mph window at S2.</div>
+          <div class="car-badges"><span class="car-badge badge-class-s2">S2</span></div>
+        </div>
+        <div class="car-stats"><div class="car-stat-val">9.4</div><div class="car-stat-lbl">Drag Score</div></div>
+      </div>
+    </div>
+
+    <div class="tip-box">
+      <div class="tip-box-label">Drag Launch Tip</div>
+      <p>Set launch RPM to 60–70% of redline in the tuning menu. Too low and you bog; too high and you spin. For AWD cars, brake-boost to the launch RPM before the countdown reaches zero.</p>
+    </div>
+  </div>
+
+  <!-- DRIFT -->
+  <div class="type-section" id="type-drift">
+    <div class="prose">
+      <p>Drift scoring in FH6 rewards <strong>angle, speed, and proximity to zone lines</strong> — not just sideways time. RWD is essentially required for serious points. Angle builds faster with high-powered, lightweight RWD cars. Japan's touge roads and industrial zones in Tokyo City are the dedicated drift event locations.</p>
+    </div>
+
+    <div class="stat-grid">
+      <div class="stat-cell"><div class="stat-cell-val" style="color:var(--red)">RWD</div><div class="stat-cell-lbl">Required drivetrain</div></div>
+      <div class="stat-cell"><div class="stat-cell-val" style="color:var(--accent)">A/S1</div><div class="stat-cell-lbl">Best drift classes</div></div>
+      <div class="stat-cell"><div class="stat-cell-val" style="color:var(--amber)">600–900</div><div class="stat-cell-lbl">Ideal HP range</div></div>
+    </div>
+
+    <div class="car-list">
+      <div class="car-card">
+        <div class="car-rank gold">1</div>
+        <div class="car-info">
+          <div class="car-name">2022 Toyota GR86</div>
+          <div class="car-sub">The drift platform of choice. Light, balanced 50/50 weight distribution, responsive steering. Low PI class means it's accessible early. Exceptional tuning ceiling for drift builds.</div>
+          <div class="car-badges"><span class="car-badge badge-class-b">B</span><span class="car-badge badge-class-a">A</span></div>
+        </div>
+        <div class="car-stats"><div class="car-stat-val">9.5</div><div class="car-stat-lbl">Drift Score</div></div>
+      </div>
+      <div class="car-card">
+        <div class="car-rank gold">2</div>
+        <div class="car-info">
+          <div class="car-name">2020 Nissan Silvia S15 Spec R</div>
+          <div class="car-sub">Legendary drift status for good reason. SR20DET engine response, short wheelbase that snaps into angle instantly. The go-to for Japanese drift championships in FH6.</div>
+          <div class="car-badges"><span class="car-badge badge-class-b">B</span><span class="car-badge badge-class-a">A</span></div>
+        </div>
+        <div class="car-stats"><div class="car-stat-val">9.4</div><div class="car-stat-lbl">Drift Score</div></div>
+      </div>
+      <div class="car-card">
+        <div class="car-rank silver">3</div>
+        <div class="car-info">
+          <div class="car-name">2001 Mazda RX-7 Spirit R Type A</div>
+          <div class="car-sub">Rotary engine's flat torque curve makes throttle control extremely precise in a drift — you can feather angle exactly how you want. Gets very competitive in A class.</div>
+          <div class="car-badges"><span class="car-badge badge-class-b">B</span><span class="car-badge badge-class-a">A</span></div>
+        </div>
+        <div class="car-stats"><div class="car-stat-val">9.2</div><div class="car-stat-lbl">Drift Score</div></div>
+      </div>
+      <div class="car-card">
+        <div class="car-rank silver">4</div>
+        <div class="car-info">
+          <div class="car-name">2020 Dodge Challenger SRT Hellcat Widebody</div>
+          <div class="car-sub">High-angle monster for S1 drift. The wide body increases scoring zone proximity. 797hp creates huge smoke trails for score multipliers.</div>
+          <div class="car-badges"><span class="car-badge badge-class-s1">S1</span></div>
+        </div>
+        <div class="car-stats"><div class="car-stat-val">8.9</div><div class="car-stat-lbl">Drift Score</div></div>
+      </div>
+    </div>
+
+    <div class="tip-box">
+      <div class="tip-box-label">Drift Scoring Tip</div>
+      <p>Chaining drifts across zones doubles your multiplier. Straighten up briefly between zones to reset the counter and re-enter the next zone clean — this scores more than carrying a messy drift through.</p>
+    </div>
+  </div>
+
+  <!-- TOUGE -->
+  <div class="type-section" id="type-touge">
+    <div class="prose">
+      <p><strong>Touge Showdown</strong> is FH6's new 1v1 mountain battle mode — three laps on five pre-set mountain roads in Shimanoyama and Takashiro. You win by finishing ahead after three rounds. It rewards technical driving, precise braking, and smooth corner exit — not raw top speed.</p>
+    </div>
+
+    <div class="stat-grid">
+      <div class="stat-cell"><div class="stat-cell-val" style="color:var(--accent)">RWD</div><div class="stat-cell-lbl">Preferred drivetrain</div></div>
+      <div class="stat-cell"><div class="stat-cell-val" style="color:var(--green)">A/S1</div><div class="stat-cell-lbl">Most competitive</div></div>
+      <div class="stat-cell"><div class="stat-cell-val" style="color:var(--purple)">Light</div><div class="stat-cell-lbl">Weight priority</div></div>
+    </div>
+
+    <div class="car-list">
+      <div class="car-card">
+        <div class="car-rank gold">1</div>
+        <div class="car-info">
+          <div class="car-name">1992 Toyota Supra (A80)</div>
+          <div class="car-sub">Born for touge. Perfect power-to-weight at A class, exceptional brake response, and a short wheelbase that rotates cleanly through tight hairpins. The community favorite for Touge Showdown.</div>
+          <div class="car-badges"><span class="car-badge badge-class-a">A</span><span class="car-badge badge-class-s1">S1</span></div>
+        </div>
+        <div class="car-stats"><div class="car-stat-val">9.6</div><div class="car-stat-lbl">Touge Score</div></div>
+      </div>
+      <div class="car-card">
+        <div class="car-rank gold">2</div>
+        <div class="car-info">
+          <div class="car-name">1999 Nissan Skyline GT-R V-Spec II (R34)</div>
+          <div class="car-sub">AWD ATTESA system gives it slight advantage in wet weather touge battles. HICAS four-wheel steering makes hairpins feel planted. Slightly heavier than the Supra but more forgiving.</div>
+          <div class="car-badges"><span class="car-badge badge-class-a">A</span><span class="car-badge badge-class-s1">S1</span></div>
+        </div>
+        <div class="car-stats"><div class="car-stat-val">9.4</div><div class="car-stat-lbl">Touge Score</div></div>
+      </div>
+      <div class="car-card">
+        <div class="car-rank silver">3</div>
+        <div class="car-info">
+          <div class="car-name">2022 Toyota GR Yaris</div>
+          <div class="car-sub">Tiny and aggressive. The lightest competitive option for Touge Showdown, and it shows — the GR Yaris changes direction faster than anything else in B/A class.</div>
+          <div class="car-badges"><span class="car-badge badge-class-b">B</span><span class="car-badge badge-class-a">A</span></div>
+        </div>
+        <div class="car-stats"><div class="car-stat-val">9.1</div><div class="car-stat-lbl">Touge Score</div></div>
+      </div>
+      <div class="car-card">
+        <div class="car-rank silver">4</div>
+        <div class="car-info">
+          <div class="car-name">2020 Honda Civic Type R (FK8)</div>
+          <div class="car-sub">FWD means different handling technique — late braking, trail-braking into corners. Takes adjustment but the Civic Type R's mechanical grip lets you carry corner speed very few RWD cars match.</div>
+          <div class="car-badges"><span class="car-badge badge-class-b">B</span><span class="car-badge badge-class-a">A</span></div>
+        </div>
+        <div class="car-stats"><div class="car-stat-val">8.8</div><div class="car-stat-lbl">Touge Score</div></div>
+      </div>
+    </div>
+
+    <div class="tip-box">
+      <div class="tip-box-label">Touge Strategy</div>
+      <p>Touge Showdown is won or lost at the hairpins, not the straights. If your opponent is faster on the straight, focus on braking late into the corners and carrying exit speed — a well-executed hairpin gains 2–3 car lengths that take the full straight to give back.</p>
+    </div>
+  </div>
+
+</article>
+
+<!-- SIDEBAR -->
+<aside class="sidebar">
+  <div class="sidebar-card">
+    <div class="sidebar-card-head">On this page</div>
+    <nav class="toc">
+      <a href="#road">Road Racing</a>
+      <a href="#dirt">Dirt / Cross-Country</a>
+      <a href="#drag">Drag Racing</a>
+      <a href="#drift">Drift Events</a>
+      <a href="#touge">Touge Showdown</a>
+    </nav>
+  </div>
+
+  <div class="sidebar-card">
+    <div class="sidebar-card-head">Event types in FH6</div>
+    <div style="padding:14px;display:flex;flex-direction:column;gap:8px;">
+      <div style="font-size:12px;color:var(--muted);display:flex;justify-content:space-between;border-bottom:1px solid var(--border);padding-bottom:8px;"><span>Road Racing</span><span style="font-family:var(--font-mono);font-size:10px;color:var(--accent3)">Tarmac circuits</span></div>
+      <div style="font-size:12px;color:var(--muted);display:flex;justify-content:space-between;border-bottom:1px solid var(--border);padding-bottom:8px;"><span>Dirt / Cross-Country</span><span style="font-family:var(--font-mono);font-size:10px;color:var(--green)">Off-road stages</span></div>
+      <div style="font-size:12px;color:var(--muted);display:flex;justify-content:space-between;border-bottom:1px solid var(--border);padding-bottom:8px;"><span>Drag Meet</span><span style="font-family:var(--font-mono);font-size:10px;color:var(--accent)">¼ / ½ mile strips</span></div>
+      <div style="font-size:12px;color:var(--muted);display:flex;justify-content:space-between;border-bottom:1px solid var(--border);padding-bottom:8px;"><span>Drift Zones</span><span style="font-family:var(--font-mono);font-size:10px;color:var(--amber)">Scored events</span></div>
+      <div style="font-size:12px;color:var(--muted);display:flex;justify-content:space-between;"><span>Touge Showdown</span><span style="font-family:var(--font-mono);font-size:10px;color:var(--purple)">1v1 online</span></div>
+    </div>
+  </div>
+
+  <div class="sidebar-card">
+    <div class="sidebar-card-head">Related guides</div>
+    <ul class="sidebar-links">
+      <li><a href="car-tier-list.html">Car Tier List<span>→</span></a></li>
+      <li><a href="tuning-guide.html">Tuning Guide<span>→</span></a></li>
+      <li><a href="drift-guide.html">Drift Guide<span>→</span></a></li>
+      <li><a href="multiplayer-guide.html">Multiplayer Guide<span>→</span></a></li>
+      <li><a href="car-list.html">Full Car List (618)<span>→</span></a></li>
+    </ul>
+  </div>
+</aside>
+
+</div>
+</div>
+
+<footer>
+  <div>
+    <div class="footer-logo">FH6<span>Guide</span></div>
+    <div class="footer-note" style="margin-top:6px;">Fan-made guide site · Not affiliated with Playground Games or Xbox Game Studios</div>
+  </div>
+  <ul class="footer-links">
+    <li><a href="#">About</a></li>
+    <li><a href="#">Submit a guide</a></li>
+    <li><a href="#">Contact</a></li>
+    <li><a href="#">Privacy</a></li>
+  </ul>
+</footer>
+
+<script>
+function toggleNav(){document.getElementById('navDrawer').classList.toggle('open')}
+document.addEventListener('click',function(e){
+  var d=document.getElementById('navDrawer'),b=document.querySelector('.nav-hamburger');
+  if(d&&d.classList.contains('open')&&!d.contains(e.target)&&b&&!b.contains(e.target))
+    d.classList.remove('open')
+});
+document.querySelectorAll('.nav-drawer a').forEach(function(a){
+  a.addEventListener('click',function(){document.getElementById('navDrawer').classList.remove('open')})
+});
+
+function showType(type, btn) {
+  document.querySelectorAll('.type-section').forEach(function(s){ s.classList.remove('active'); });
+  document.querySelectorAll('.type-tab').forEach(function(t){ t.classList.remove('active'); });
+  document.getElementById('type-' + type).classList.add('active');
+  btn.classList.add('active');
+}
+</script>
+</body>
+</html>

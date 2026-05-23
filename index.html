@@ -1,418 +1,1214 @@
 <!DOCTYPE html>
-<html lang="en-US">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Wordle 7‑Day Calendar | Today's Wordle Answer, Hints & Solver Guide</title>
-  <meta name="description" content="Check today's Wordle answer, hints, clues and solver. Browse the latest 7-day Wordle calendar, daily Wordle guide, word solver, and puzzle history archive.">
-  <meta name="keywords" content="Wordle today answer, Wordle hints, Wordle clues, Wordle solver, Wordle guide, Wordle cheat, daily Wordle, Wordle 7 day calendar, Wordle word solver, Wordle simulator, Wordle strategy, best Wordle starting words, Wordle archive, Wordle history, Wordle statistics">
-  <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://dailywordlehub.com">
-  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="192x192" href="icon-192x192.png">
-  <link rel="icon" type="image/png" sizes="512x512" href="icon-512x512.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-  <meta property="og:title" content="Wordle 7‑Day Calendar | Today's Wordle Answer, Hints & Solver Guide">
-  <meta property="og:description" content="Check today's Wordle answer, hints, clues and solver. Daily Wordle guide and puzzle archive.">
-  <meta property="og:type" content="website">
-  <meta property="og:locale" content="en_US">
-  <meta property="og:url" content="https://dailywordlehub.com">
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    "name": "Daily Wordle Hub",
-    "url": "https://dailywordlehub.com",
-    "description": "Check today's Wordle answer, hints, solver and 7-day puzzle calendar.",
-    "potentialAction": {
-      "@type": "SearchAction",
-      "target": "https://dailywordlehub.com/history.html?q={search_term_string}",
-      "query-input": "required name=search_term_string"
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FH6 Guide — Forza Horizon 6 Wiki & Tips</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg:        #0a0a0c;
+  --bg2:       #111116;
+  --bg3:       #18181f;
+  --bg4:       #1f1f28;
+  --border:    rgba(255,255,255,0.07);
+  --border2:   rgba(255,255,255,0.12);
+  --accent:    #e8ff47;
+  --accent2:   #ff6b35;
+  --accent3:   #47c5ff;
+  --text:      #f0efe8;
+  --muted:     #7a7a88;
+  --muted2:    #4a4a58;
+  --red:       #ff4d4d;
+  --font-disp: 'Bebas Neue', sans-serif;
+  --font-body: 'DM Sans', sans-serif;
+  --font-mono: 'DM Mono', monospace;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: 15px;
+  line-height: 1.6;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+a { color: inherit; text-decoration: none; }
+
+/* ── NAV ── */
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(10,10,12,0.92);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+  padding: 0 2rem;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  height: 52px;
+}
+
+.nav-logo {
+  font-family: var(--font-disp);
+  font-size: 22px;
+  letter-spacing: .04em;
+  color: var(--accent);
+  flex-shrink: 0;
+}
+.nav-logo span { color: var(--text); }
+
+.nav-links {
+  display: flex;
+  gap: 0;
+  list-style: none;
+  flex: 1;
+}
+.nav-links a {
+  display: block;
+  padding: 0 14px;
+  height: 52px;
+  line-height: 52px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--muted);
+  letter-spacing: .03em;
+  transition: color .15s;
+  white-space: nowrap;
+}
+.nav-links a:hover { color: var(--text); }
+.nav-links a.active { color: var(--accent); }
+
+.nav-search {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--bg3);
+  border: 1px solid var(--border2);
+  border-radius: 6px;
+  padding: 0 12px;
+  height: 34px;
+  cursor: text;
+  flex-shrink: 0;
+}
+.nav-search input {
+  background: none;
+  border: none;
+  outline: none;
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: 13px;
+  width: 180px;
+}
+.nav-search input::placeholder { color: var(--muted2); }
+.nav-search svg { color: var(--muted); flex-shrink: 0; }
+
+/* ── HERO ── */
+.hero {
+  position: relative;
+  padding: 72px 2rem 64px;
+  overflow: hidden;
+  border-bottom: 1px solid var(--border);
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 60% 80% at 80% 50%, rgba(232,255,71,0.045) 0%, transparent 70%),
+    radial-gradient(ellipse 40% 60% at 20% 80%, rgba(71,197,255,0.04) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+.hero-grid-lines {
+  position: absolute;
+  inset: 0;
+  background-image:
+    repeating-linear-gradient(90deg, rgba(255,255,255,0.025) 0, rgba(255,255,255,0.025) 1px, transparent 1px, transparent 80px),
+    repeating-linear-gradient(0deg,  rgba(255,255,255,0.025) 0, rgba(255,255,255,0.025) 1px, transparent 1px, transparent 80px);
+  pointer-events: none;
+}
+
+.hero-inner {
+  position: relative;
+  max-width: 900px;
+}
+
+.hero-eyebrow {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--accent);
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.hero-eyebrow::before {
+  content: '';
+  display: block;
+  width: 24px;
+  height: 1px;
+  background: var(--accent);
+}
+
+.hero h1 {
+  font-family: var(--font-disp);
+  font-size: clamp(52px, 8vw, 88px);
+  line-height: .95;
+  letter-spacing: .02em;
+  margin-bottom: 20px;
+}
+.hero h1 .outline {
+  -webkit-text-stroke: 1.5px var(--text);
+  color: transparent;
+}
+.hero h1 .accent { color: var(--accent); }
+
+.hero-sub {
+  font-size: 16px;
+  color: var(--muted);
+  max-width: 520px;
+  line-height: 1.65;
+  margin-bottom: 32px;
+}
+
+.hero-stats {
+  display: flex;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+.hero-stat-val {
+  font-family: var(--font-disp);
+  font-size: 28px;
+  letter-spacing: .04em;
+  color: var(--accent);
+  line-height: 1;
+  margin-bottom: 2px;
+}
+.hero-stat-lbl {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--muted);
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+
+/* ── LAYOUT ── */
+.page-wrap {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+section { padding: 52px 0; }
+
+.section-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 24px;
+  gap: 16px;
+}
+.section-title {
+  font-family: var(--font-disp);
+  font-size: 28px;
+  letter-spacing: .04em;
+}
+.section-label {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--muted);
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+.view-all {
+  font-size: 12px;
+  color: var(--muted);
+  font-family: var(--font-mono);
+  letter-spacing: .06em;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  transition: color .15s;
+  white-space: nowrap;
+}
+.view-all:hover { color: var(--accent); }
+
+/* ── HOT GUIDES ── */
+.hot-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  grid-template-rows: auto auto;
+  gap: 12px;
+  align-items: stretch;
+}
+
+.guide-card {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: border-color .2s, transform .2s;
+  cursor: pointer;
+  min-width: 0;
+}
+.guide-card:hover {
+  border-color: var(--border2);
+  transform: translateY(-2px);
+}
+
+.card-img {
+  height: 160px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-disp);
+  font-size: 56px;
+  letter-spacing: .04em;
+  position: relative;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.card-img.barn    { background: linear-gradient(135deg, #1a140a 0%, #2a1f0e 100%); color: #c4922a; }
+.card-img.treasure{ background: linear-gradient(135deg, #0a1220 0%, #0f1e30 100%); color: #3a8fe0; }
+.card-img.tierlist{ background: linear-gradient(135deg, #150a0a 0%, #281010 100%); color: #cc3333; }
+.card-img.tuning  { background: linear-gradient(135deg, #0a110a 0%, #101e10 100%); color: #3a9e3a; }
+.card-img.wrist   { background: linear-gradient(135deg, #10080f 0%, #1e0f1c 100%); color: #9944cc; }
+.card-img.legend  { background: linear-gradient(135deg, #0d0d00 0%, #1c1c00 100%); color: #cccc00; }
+
+.card-img-sub {
+  position: absolute;
+  bottom: 10px;
+  right: 12px;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: rgba(255,255,255,0.3);
+  letter-spacing: .08em;
+}
+
+.guide-card.featured .card-img { height: 220px; font-size: 80px; }
+
+.card-body { padding: 14px 16px 16px; flex: 1; display: flex; flex-direction: column; gap: 6px; }
+
+.card-tags { display: flex; gap: 6px; flex-wrap: wrap; }
+.tag {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  padding: 3px 7px;
+  border-radius: 4px;
+  border: 1px solid;
+}
+.tag-collectible { color: #BA7517; border-color: rgba(186,117,23,0.3); background: rgba(186,117,23,0.08); }
+.tag-cars        { color: var(--accent3); border-color: rgba(71,197,255,0.3); background: rgba(71,197,255,0.08); }
+.tag-progression { color: #9f7fe8; border-color: rgba(159,127,232,0.3); background: rgba(159,127,232,0.08); }
+.tag-advanced    { color: var(--accent2); border-color: rgba(255,107,53,0.3); background: rgba(255,107,53,0.08); }
+.tag-hot         { color: var(--red); border-color: rgba(255,77,77,0.3); background: rgba(255,77,77,0.08); }
+.tag-endgame     { color: var(--accent); border-color: rgba(232,255,71,0.3); background: rgba(232,255,71,0.08); }
+
+.card-title {
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.35;
+  color: var(--text);
+}
+.guide-card.featured .card-title { font-size: 18px; }
+
+.card-meta {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--muted);
+  letter-spacing: .04em;
+  margin-top: auto;
+  padding-top: 8px;
+  border-top: 1px solid var(--border);
+  display: flex;
+  justify-content: space-between;
+}
+
+/* ── SECTION GRID ── */
+.sections-row {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 10px;
+}
+
+.section-card {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 20px 16px;
+  cursor: pointer;
+  transition: border-color .2s, background .2s;
+  position: relative;
+  overflow: hidden;
+}
+.section-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+}
+.section-card.s-green::before  { background: #1D9E75; }
+.section-card.s-blue::before   { background: var(--accent3); }
+.section-card.s-amber::before  { background: #BA7517; }
+.section-card.s-purple::before { background: #7F77DD; }
+.section-card.s-coral::before  { background: var(--accent2); }
+
+.section-card:hover { background: var(--bg3); border-color: var(--border2); }
+
+.sc-icon {
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+.s-green  .sc-icon { color: #1D9E75; }
+.s-blue   .sc-icon { color: var(--accent3); }
+.s-amber  .sc-icon { color: #BA7517; }
+.s-purple .sc-icon { color: #7F77DD; }
+.s-coral  .sc-icon { color: var(--accent2); }
+
+.sc-title {
+  font-weight: 500;
+  font-size: 13px;
+  color: var(--text);
+  margin-bottom: 8px;
+  line-height: 1.3;
+}
+.sc-pages {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.sc-pages li {
+  font-size: 11px;
+  color: var(--muted);
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.sc-pages li::before {
+  content: '—';
+  font-size: 10px;
+  opacity: .4;
+}
+
+/* ── PROGRESSION EXPLAINER ── */
+.progression-wrap {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 28px 28px 24px;
+}
+
+.prog-title {
+  font-family: var(--font-disp);
+  font-size: 22px;
+  letter-spacing: .04em;
+  margin-bottom: 6px;
+}
+.prog-sub {
+  font-size: 13px;
+  color: var(--muted);
+  margin-bottom: 28px;
+  font-family: var(--font-mono);
+}
+
+.prog-tracks {
+  display: grid;
+  grid-template-columns: 1fr 1px 1fr 1px 1fr;
+  gap: 0;
+}
+.prog-divider {
+  background: var(--border);
+  margin: 0 24px;
+}
+
+.prog-track { padding: 0 4px; }
+.pt-label {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.pt-dot {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.pt-dot.wrist  { background: #7F77DD; }
+.pt-dot.stamp  { background: #BA7517; }
+.pt-dot.play   { background: var(--accent3); }
+
+.prog-steps { display: flex; flex-direction: column; gap: 0; position: relative; }
+.prog-steps::before {
+  content: '';
+  position: absolute;
+  left: 11px; top: 12px; bottom: 12px;
+  width: 1px;
+  background: var(--border2);
+}
+
+.ps {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 7px 0;
+  position: relative;
+}
+.ps-dot {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  border: 1.5px solid var(--muted2);
+  background: var(--bg2);
+  flex-shrink: 0;
+  position: relative;
+  z-index: 1;
+}
+.ps.done .ps-dot { background: #7F77DD; border-color: #7F77DD; }
+.ps.done-a .ps-dot { background: #BA7517; border-color: #BA7517; }
+.ps.done-b .ps-dot { background: var(--accent3); border-color: var(--accent3); }
+.ps.special .ps-dot { background: var(--accent); border-color: var(--accent); box-shadow: 0 0 8px rgba(232,255,71,.4); }
+.ps-text { font-size: 12px; color: var(--muted); line-height: 1.3; }
+.ps.special .ps-text { color: var(--accent); font-weight: 500; }
+
+.prog-unlock {
+  margin-top: 16px;
+  padding: 10px 12px;
+  background: rgba(232,255,71,.05);
+  border: 1px solid rgba(232,255,71,.15);
+  border-radius: 6px;
+  font-size: 11px;
+  color: var(--accent);
+  font-family: var(--font-mono);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* ── WEEKLY ── */
+.weekly-banner {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 20px 24px;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+.weekly-badge {
+  background: rgba(232,255,71,0.08);
+  border: 1px solid rgba(232,255,71,0.2);
+  border-radius: 8px;
+  padding: 14px 20px;
+  text-align: center;
+  flex-shrink: 0;
+}
+.weekly-badge-label {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  color: var(--accent);
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+.weekly-badge-val {
+  font-family: var(--font-disp);
+  font-size: 28px;
+  color: var(--accent);
+  letter-spacing: .04em;
+  line-height: 1;
+}
+.weekly-content { flex: 1; }
+.weekly-title { font-weight: 500; font-size: 15px; margin-bottom: 6px; }
+.weekly-desc { font-size: 13px; color: var(--muted); line-height: 1.5; }
+.weekly-tasks {
+  display: flex;
+  gap: 8px;
+  margin-top: 12px;
+  flex-wrap: wrap;
+}
+.wtask {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  padding: 4px 10px;
+  border-radius: 4px;
+  border: 1px solid var(--border2);
+  color: var(--muted);
+}
+.wtask.done { color: #1D9E75; border-color: rgba(29,158,117,0.3); background: rgba(29,158,117,0.08); }
+
+/* ── FOOTER ── */
+footer {
+  border-top: 1px solid var(--border);
+  padding: 36px 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.footer-logo {
+  font-family: var(--font-disp);
+  font-size: 18px;
+  letter-spacing: .04em;
+  color: var(--accent);
+}
+.footer-logo span { color: var(--muted); }
+.footer-note {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--muted2);
+  letter-spacing: .06em;
+}
+.footer-links {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+}
+.footer-links a {
+  font-size: 12px;
+  color: var(--muted);
+  transition: color .15s;
+}
+.footer-links a:hover { color: var(--text); }
+
+/* ── ANIMATIONS ── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.hero-eyebrow { animation: fadeUp .5s ease both; }
+.hero h1      { animation: fadeUp .5s .1s ease both; }
+.hero-sub     { animation: fadeUp .5s .2s ease both; }
+.hero-stats   { animation: fadeUp .5s .3s ease both; }
+
+/* scrolling ticker */
+.ticker-wrap {
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  background: var(--bg2);
+  overflow: hidden;
+  height: 36px;
+  display: flex;
+  align-items: center;
+}
+.ticker-inner {
+  display: flex;
+  gap: 0;
+  white-space: nowrap;
+  animation: ticker 36s linear infinite;
+}
+@keyframes ticker {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+.ticker-item {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--muted);
+  letter-spacing: .06em;
+  padding: 0 28px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.ticker-item::after {
+  content: '//';
+  color: var(--muted2);
+}
+.ticker-item .hi { color: var(--accent); }
+
+/* ── RESPONSIVE — MOBILE ── */
+
+/* Hamburger button (hidden on desktop) */
+.nav-hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  margin-left: auto;
+  padding: 6px;
+  flex-shrink: 0;
+}
+.nav-hamburger span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: var(--text);
+  border-radius: 2px;
+  transition: all .25s;
+}
+
+/* Mobile nav drawer */
+.nav-drawer {
+  display: none;
+  position: fixed;
+  top: 52px;
+  left: 0;
+  right: 0;
+  background: rgba(10,10,12,0.98);
+  border-bottom: 1px solid var(--border2);
+  padding: 12px 0 20px;
+  z-index: 99;
+  flex-direction: column;
+}
+.nav-drawer.open { display: flex; }
+.nav-drawer a {
+  padding: 12px 2rem;
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--muted);
+  display: block;
+  transition: color .15s;
+}
+.nav-drawer a:hover { color: var(--text); }
+.nav-drawer a.active { color: var(--accent); }
+.nav-drawer-search {
+  margin: 12px 2rem 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--bg3);
+  border: 1px solid var(--border2);
+  border-radius: 6px;
+  padding: 0 12px;
+  height: 40px;
+}
+.nav-drawer-search input {
+  background: none;
+  border: none;
+  outline: none;
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: 14px;
+  flex: 1;
+}
+.nav-drawer-search input::placeholder { color: var(--muted2); }
+
+@media (max-width: 768px) {
+
+  /* Nav */
+  .nav-links { display: none; }
+  .nav-search { display: none; }
+  .nav-hamburger { display: flex; }
+
+  /* Hero */
+  .hero { padding: 48px 1.25rem 40px; }
+  .hero h1 { font-size: clamp(40px, 12vw, 64px); }
+  .hero-sub { font-size: 14px; }
+  .hero-stats { gap: 20px; flex-wrap: wrap; }
+  .hero-stat-val { font-size: 22px; }
+
+  /* Ticker */
+  .ticker-wrap { height: 32px; }
+  .ticker-item { font-size: 10px; padding: 0 18px; }
+
+  /* Page padding */
+  .page-wrap { padding: 0 1.25rem; }
+
+  /* Hot guides grid — stack to single column */
+  .hot-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
   }
-  </script>
-  <style>
-    *{margin:0;padding:0;box-sizing:border-box;font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Arial,sans-serif}
-    body{background:#f6f7f9;padding:15px;max-width:900px;margin:0 auto;line-height:1.5;color:#1a1a1b}
-    header{text-align:center;margin-bottom:20px}
-    h1{color:#538d4e;margin-bottom:8px;font-size:1.5rem}
-    .desc{color:#666;margin-bottom:20px}
-    .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:24px}
-    .stat-card{background:white;padding:16px;border-radius:10px;text-align:center;box-shadow:0 1px 3px rgba(0,0,0,0.1)}
-    .stat-num{font-size:22px;font-weight:bold;color:#538d4e;margin-bottom:4px}
-    .stat-txt{font-size:0.85rem;color:#555}
-    .section{background:white;padding:18px;border-radius:10px;margin-bottom:16px;box-shadow:0 1px 3px rgba(0,0,0,0.08)}
-    h2{color:#538d4e;margin-bottom:12px;font-size:1.1rem;border-left:4px solid #538d4e;padding-left:10px;display:flex;align-items:center;gap:8px}
-    .date-tag{font-size:0.85rem;color:#777;font-weight:normal}
-    .calendar-7d{display:grid;grid-template-columns:repeat(7,1fr);gap:8px}
-    .day-box{padding:12px 6px;border-radius:8px;text-align:center;background:#f1f1f1}
-    .day-box a{text-decoration:none;color:#222;font-weight:500;font-size:0.9rem}
-    .day-box.today{background:#538d4e}
-    .day-box.today a{color:white}
-    .day-box.past{background:#e7f5e6}
-    .quick-list{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:10px}
-    .quick-list a{background:#f1f1f1;padding:10px;border-radius:6px;text-decoration:none;color:#333;font-size:0.9rem}
-    /* Tools */
-    .tile{width:36px;height:36px;display:flex;align-items:center;justify-content:center;color:white;font-weight:bold;border-radius:4px;font-size:18px}
-    .green{background:#538d4e}
-    .yellow{background:#b59f3b}
-    .gray{background:#787c7e}
-    .color-box{display:flex;gap:8px;margin:6px 0;flex-wrap:wrap;align-items:center;font-size:0.95rem}
-    .word-list{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
-    .word{background:#e3e3e3;padding:3px 8px;border-radius:6px;font-weight:500;font-size:0.9rem}
-    .filter-row,.sim-row{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:8px}
-    input{padding:8px;border:1px solid #ddd;border-radius:6px;font-size:0.95rem;width:100%}
-    button{padding:8px 14px;background:#538d4e;color:white;border:none;border-radius:6px;cursor:pointer;font-size:0.95rem}
-    #filterResult,#simBoard{margin-top:10px;padding:8px;background:#f7f7f7;border-radius:6px;min-height:40px}
-    #dailyAnsBox{margin-top:10px;padding:8px;background:#f7f7f7;border-radius:6px;min-height:40px}
-    .sim-board-row{display:flex;gap:5px;margin-bottom:5px}
-    #showAnsBtn{margin-bottom:8px;background:#b59f3b}
-    .compact-row{display:flex;gap:12px;margin-bottom:16px}
-    .compact-row .section{flex:1;margin-bottom:0}
-    ul{padding-left:18px;font-size:0.9rem}
-    .seo-text{color:#555;font-size:0.9rem;line-height:1.7;margin-top:10px}
-    .seo-text strong{color:#538d4e}
-    footer{text-align:center;margin-top:30px;color:#777;font-size:0.85rem}
-    @media(max-width:700px){
-      .stats{grid-template-columns:repeat(2,1fr)}
-      .calendar-7d{grid-template-columns:repeat(4,1fr)}
-      .filter-row,.sim-row{grid-template-columns:1fr}
-      .compact-row{flex-direction:column}
-    }
-  </style>
+  .guide-card.featured { grid-row: auto; }
+  .guide-card.featured .card-img { height: 160px; font-size: 56px; }
+
+  /* Section header */
+  .section-header { flex-direction: column; align-items: flex-start; gap: 6px; }
+  .section-title { font-size: 22px; }
+
+  /* Browse by topic — 2 columns on mobile */
+  .sections-row {
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+
+  /* Progression — stack to single column */
+  .prog-tracks {
+    grid-template-columns: 1fr;
+  }
+  .prog-divider {
+    width: 100%;
+    height: 1px;
+    margin: 16px 0;
+  }
+  .prog-track { padding: 0 !important; }
+
+  /* Weekly banner — stack */
+  .weekly-banner {
+    flex-direction: column;
+    gap: 16px;
+    align-items: flex-start;
+  }
+  .weekly-badge { width: 100%; text-align: left; display: flex; gap: 12px; align-items: center; }
+  .weekly-badge-val { font-size: 22px; }
+
+  /* Footer */
+  footer {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 28px 1.25rem;
+    gap: 16px;
+  }
+  .footer-links { flex-wrap: wrap; gap: 14px; }
+
+  /* Section padding */
+  section { padding: 36px 0; }
+}
+
+@media (max-width: 480px) {
+  /* Very small screens — 1 column for topic sections too */
+  .sections-row { grid-template-columns: 1fr; }
+  .hero { padding: 36px 1.25rem 32px; }
+  .prog-tracks { gap: 0; }
+}
+</style>
 </head>
 <body>
-  <header>
-    <h1>Wordle 7‑Day Calendar</h1>
-    <p class="desc">Today's Wordle Answer &amp; Hints | Solver &amp; Guide | <a href="history.html" style="color:#538d4e;text-decoration:none;">Puzzle History</a></p>
-  </header>
 
-  <!-- Stats -->
-  <div class="stats">
-    <div class="stat-card"><div class="stat-num" id="totalPuzzles">0</div><div class="stat-txt">Total Puzzles</div></div>
-    <div class="stat-card"><div class="stat-num" id="winRate">0%</div><div class="stat-txt">Win Rate</div></div>
-    <div class="stat-card"><div class="stat-num" id="streak">0</div><div class="stat-txt">Current Streak</div></div>
-    <div class="stat-card"><div class="stat-num" id="avgGuess">0.0</div><div class="stat-txt">Avg Guesses</div></div>
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="nav-logo">FH6<span>Guide</span></a>
+  <ul class="nav-links">
+    <li><a href="index.html" class="active">Home</a></li>
+    <li><a href="getting-started.html">Getting Started</a></li>
+    <li><a href="car-tier-list.html">Cars & Garage</a></li>
+    <li><a href="barn-finds.html">Collectibles</a></li>
+    <li><a href="progression.html">Progression</a></li>
+    <li><a href="tuning-guide.html">Advanced</a></li>
+  </ul>
+  <div class="nav-search">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+    <input type="text" placeholder="Search guides…">
   </div>
+  <button class="nav-hamburger" onclick="toggleNav()" aria-label="Open menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
 
-  <!-- 7-Day Calendar -->
-  <div class="section">
-    <h2>📅 Latest 7 Days Puzzle Calendar</h2>
-    <div class="calendar-7d" id="calendarWrap"></div>
+<!-- Mobile nav drawer -->
+<div class="nav-drawer" id="navDrawer">
+  <a href="index.html" class="active">Home</a>
+  <a href="getting-started.html">Getting Started</a>
+  <a href="car-tier-list.html">Cars &amp; Garage</a>
+  <a href="barn-finds.html">Collectibles</a>
+  <a href="progression.html">Progression</a>
+  <a href="tuning-guide.html">Advanced</a>
+  <div class="nav-drawer-search">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+    <input type="text" placeholder="Search guides…">
   </div>
+</div>
 
-  <!-- Quick Access -->
-  <div class="section">
-    <h2>⚡ Quick Access (Latest 7 Days)</h2>
-    <div class="quick-list" id="quickWrap"></div>
+<!-- TICKER -->
+<!-- ↓↓↓ 更新：新增4条新页面相关条目，ticker内容翻倍保持循环连续 ↓↓↓ -->
+<div class="ticker-wrap">
+  <div class="ticker-inner">
+    <span class="ticker-item"><span class="hi">NEW</span> Forza Horizon 6 launched May 19, 2026</span>
+    <span class="ticker-item">15 Barn Finds hidden across Japan</span>
+    <span class="ticker-item">9 Treasure Cars — one per region</span>
+    <span class="ticker-item"><span class="hi">HOT</span> Wristband guide — unlock Legend Island</span>
+    <span class="ticker-item">270K+ Steam peak players at launch</span>
+    <span class="ticker-item">Festival Playlist resets every Thursday</span>
+    <span class="ticker-item"><span class="hi">NEW</span> Skill Points guide — farm SP fast</span>
+    <span class="ticker-item">Best cars by event type — Road, Dirt, Drag & Drift</span>
+    <span class="ticker-item"><span class="hi">NEW</span> Forza Edition cars — all 24 FE cars listed</span>
+    <span class="ticker-item">Photo Mode guide — best locations across Japan</span>
+    <span class="ticker-item"><span class="hi">NEW</span> Forza Horizon 6 launched May 19, 2026</span>
+    <span class="ticker-item">15 Barn Finds hidden across Japan</span>
+    <span class="ticker-item">9 Treasure Cars — one per region</span>
+    <span class="ticker-item"><span class="hi">HOT</span> Wristband guide — unlock Legend Island</span>
+    <span class="ticker-item">270K+ Steam peak players at launch</span>
+    <span class="ticker-item">Festival Playlist resets every Thursday</span>
+    <span class="ticker-item"><span class="hi">NEW</span> Skill Points guide — farm SP fast</span>
+    <span class="ticker-item">Best cars by event type — Road, Dirt, Drag & Drift</span>
+    <span class="ticker-item"><span class="hi">NEW</span> Forza Edition cars — all 24 FE cars listed</span>
+    <span class="ticker-item">Photo Mode guide — best locations across Japan</span>
   </div>
+</div>
 
-  <!-- Today's Wordle Answer -->
-  <div class="section">
-    <h2>📅 Today's Wordle Answer <span class="date-tag" id="dateText"></span></h2>
-    <button id="showAnsBtn">🔓 Reveal Today's Answer</button>
-    <div id="dailyAnsBox">🔒 Click the button above to reveal today's Wordle answer</div>
-  </div>
-
-  <!-- Guess Simulator -->
-  <div class="section">
-    <h2>🎮 Wordle Guess Simulator</h2>
-    <p class="seo-text" style="margin-bottom:10px;">Practice your <strong>Wordle guesses</strong> with real color feedback — green, yellow and gray tiles just like the official game.</p>
-    <div class="sim-row">
-      <input type="text" id="simGuess" maxlength="5" placeholder="Enter 5-letter word">
-      <button id="simSubmit">Guess</button>
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid-lines"></div>
+  <div class="hero-inner">
+    <div class="hero-eyebrow">Forza Horizon 6 — Japan · 2026</div>
+    <h1>Every<br><span class="outline">guide</span> you<br>need to <span class="accent">win.</span></h1>
+    <p class="hero-sub">Barn Finds, Treasure Cars, Car Tier Lists, Tuning Codes, Wristband progression and more — all in one place, updated daily.</p>
+    <!-- ↓↓↓ 更新：Guide pages 27→25，Cars in game 550+→618 ↓↓↓ -->
+    <div class="hero-stats">
+      <div>
+        <div class="hero-stat-val">25</div>
+        <div class="hero-stat-lbl">Guide pages</div>
+      </div>
+      <div>
+        <div class="hero-stat-val">15</div>
+        <div class="hero-stat-lbl">Barn Finds</div>
+      </div>
+      <div>
+        <div class="hero-stat-val">9</div>
+        <div class="hero-stat-lbl">Treasure Cars</div>
+      </div>
+      <div>
+        <div class="hero-stat-val">618</div>
+        <div class="hero-stat-lbl">Cars in game</div>
+      </div>
     </div>
-    <div id="simBoard"></div>
-    <div style="margin-top:8px;"><button id="simReset">Reset Board</button></div>
+  </div>
+</div>
+
+<!-- MAIN -->
+<main>
+
+<!-- HOT GUIDES -->
+<div class="page-wrap">
+<section>
+  <div class="section-header">
+    <div>
+      <div class="section-label">Most searched right now</div>
+      <div class="section-title">Hot guides</div>
+    </div>
+    <a href="#" class="view-all">View all guides →</a>
   </div>
 
-  <!-- Word Solver -->
-  <div class="section">
-    <h2>🔍 Wordle Word Solver</h2>
-    <p class="seo-text" style="margin-bottom:10px;">Use our <strong>Wordle solver</strong> to filter possible answers. Enter known letters, excluded letters, and fixed positions to find matching words fast.</p>
-    <div class="filter-row">
-      <input type="text" id="mustHave" placeholder="Include letters (e.g. we)">
-      <input type="text" id="mustNotHave" placeholder="Exclude letters (e.g. hit)">
-    </div>
-    <div class="filter-row">
-      <input type="text" id="fixedPos" placeholder="Fixed positions (e.g. w____)">
-      <input type="text" id="notFixedPos" placeholder="Wrong positions (e.g. ____e)">
-    </div>
-    <button id="filterBtn">🔎 Filter Words</button>
-    <div id="filterResult"></div>
-  </div>
+  <div class="hot-grid">
 
-  <!-- Rules + Colors side-by-side -->
-  <div class="compact-row">
-    <div class="section">
-      <h2>🎯 Wordle Rules & How to Play</h2>
-      <ul>
-        <li>Guess one 5‑letter word each day</li>
-        <li>You have 6 attempts maximum</li>
-        <li>Every guess must be a valid English word</li>
-        <li>Color tiles guide you to the answer</li>
+    <!-- featured -->
+    <div class="guide-card featured" style="grid-row: 1 / 3;" onclick="location.href='barn-finds.html'">
+      <div class="card-img barn">
+        BARN
+        <div class="card-img-sub">COLLECTIBLES</div>
+      </div>
+      <div class="card-body">
+        <div class="card-tags">
+          <span class="tag tag-collectible">Collectibles</span>
+          <span class="tag tag-hot">Hot</span>
+        </div>
+        <div class="card-title">All 15 Barn Find locations in Forza Horizon 6 — complete map guide</div>
+        <p style="font-size:12px; color:var(--muted); line-height:1.55; margin-top:4px;">Barn Finds are unlocked progressively via your Discover Japan Stamp level — you can't just drive there. We show every location and the stamp tier needed to trigger each rumor.</p>
+        <div class="card-meta">
+          <span>Updated May 20, 2026</span>
+          <span>~8 min read</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="guide-card" onclick="location.href='treasure-cars.html'">
+      <div class="card-img treasure" style="height:130px; font-size:40px;">
+        TREASURE
+        <div class="card-img-sub">COLLECTIBLES</div>
+      </div>
+      <div class="card-body">
+        <div class="card-tags">
+          <span class="tag tag-collectible">Collectibles</span>
+          <span class="tag tag-hot">Hot</span>
+        </div>
+        <div class="card-title">All 9 Treasure Car locations — one per region, no prereqs</div>
+        <div class="card-meta">
+          <span>Updated May 21, 2026</span>
+          <span>~5 min read</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="guide-card" onclick="location.href='car-tier-list.html'">
+      <div class="card-img tierlist" style="height:130px; font-size:40px;">
+        S-TIER
+        <div class="card-img-sub">CARS</div>
+      </div>
+      <div class="card-body">
+        <div class="card-tags">
+          <span class="tag tag-cars">Cars</span>
+          <span class="tag tag-hot">Hot</span>
+        </div>
+        <div class="card-title">FH6 car tier list — best cars by class (S1, S2, X, R)</div>
+        <div class="card-meta">
+          <span>Updated May 21, 2026</span>
+          <span>~6 min read</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="guide-card" onclick="location.href='progression.html'">
+      <div class="card-img wrist" style="height:110px; font-size:36px;">
+        GOLD
+        <div class="card-img-sub">PROGRESSION</div>
+      </div>
+      <div class="card-body">
+        <div class="card-tags">
+          <span class="tag tag-progression">Progression</span>
+          <span class="tag tag-endgame">Endgame</span>
+        </div>
+        <div class="card-title">Wristband guide — all 7 tiers & how to reach Legend Island</div>
+        <div class="card-meta">
+          <span>May 20, 2026</span>
+          <span>~7 min</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="guide-card" onclick="location.href='tuning-guide.html'">
+      <div class="card-img tuning" style="height:110px; font-size:36px;">
+        TUNE
+        <div class="card-img-sub">ADVANCED</div>
+      </div>
+      <div class="card-body">
+        <div class="card-tags">
+          <span class="tag tag-advanced">Advanced</span>
+          <span class="tag tag-hot">Hot</span>
+        </div>
+        <div class="card-title">FH6 tuning guide — every setting explained for beginners</div>
+        <div class="card-meta">
+          <span>May 19, 2026</span>
+          <span>~10 min</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+</div>
+
+<!-- SECTIONS -->
+<!-- ↓↓↓ 更新：各板块新增新页面入口链接 ↓↓↓ -->
+<div style="background: var(--bg2); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
+<div class="page-wrap">
+<section style="padding: 36px 0;">
+  <div class="section-header">
+    <div class="section-title">Browse by topic</div>
+  </div>
+  <div class="sections-row">
+
+    <!-- Getting Started — 新增 skill-points-guide.html -->
+    <div class="section-card s-green">
+      <div class="sc-icon">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 12l9-9 9 9M5 10v9a1 1 0 001 1h4v-5h4v5h4a1 1 0 001-1v-9"/></svg>
+      </div>
+      <div class="sc-title">Getting Started</div>
+      <ul class="sc-pages">
+        <li><a href="getting-started.html" style="color:var(--muted)">Beginner's guide</a></li>
+        <li><a href="player-houses.html" style="color:var(--muted)">Player houses</a></li>
+        <li><a href="xp-credits-farming.html" style="color:var(--muted)">Credits farming</a></li>
+        <li><a href="skill-points-guide.html" style="color:var(--muted)">Skill Points guide</a></li>
+        <li><a href="xp-boards.html" style="color:var(--muted)">XP Boards (200)</a></li>
+        <li><a href="festival-playlist.html" style="color:var(--muted)">Festival Playlist</a></li>
       </ul>
     </div>
-    <div class="section">
-      <h2>🎨 Color Hint Guide</h2>
-      <div class="color-box"><div class="tile green">G</div> Correct letter &amp; position</div>
-      <div class="color-box"><div class="tile yellow">Y</div> Right letter, wrong position</div>
-      <div class="color-box"><div class="tile gray">X</div> Letter not in the word</div>
+
+    <!-- Cars & Garage — 新增 best-cars-by-type.html 和 forza-edition-cars.html -->
+    <div class="section-card s-blue">
+      <div class="sc-icon">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 17H3a2 2 0 01-2-2V5a2 2 0 012-2h11a2 2 0 012 2v3M9 21h10a2 2 0 002-2v-7a2 2 0 00-2-2H9a2 2 0 00-2 2v7a2 2 0 002 2z"/></svg>
+      </div>
+      <div class="sc-title">Cars & Garage</div>
+      <ul class="sc-pages">
+        <li><a href="car-tier-list.html" style="color:var(--muted)">Car tier list</a></li>
+        <li><a href="best-cars-by-type.html" style="color:var(--muted)">Best cars by event type</a></li>
+        <li><a href="forza-edition-cars.html" style="color:var(--muted)">Forza Edition cars</a></li>
+        <li><a href="car-list.html" style="color:var(--muted)">Full car list (618)</a></li>
+        <li><a href="auction-house.html" style="color:var(--muted)">Auction House guide</a></li>
+      </ul>
+    </div>
+
+    <!-- Collectibles & Map — 无变化 -->
+    <div class="section-card s-amber">
+      <div class="sc-icon">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"/></svg>
+      </div>
+      <div class="sc-title">Collectibles & Map</div>
+      <ul class="sc-pages">
+        <li><a href="barn-finds.html" style="color:var(--muted)">All 15 Barn Finds</a></li>
+        <li><a href="treasure-cars.html" style="color:var(--muted)">All 9 Treasure Cars</a></li>
+        <li><a href="japan-map.html" style="color:var(--muted)">Japan map guide</a></li>
+        <li><a href="xp-boards.html" style="color:var(--muted)">XP Boards (200)</a></li>
+      </ul>
+    </div>
+
+    <!-- Progression — 无变化 -->
+    <div class="section-card s-purple">
+      <div class="sc-icon">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+      </div>
+      <div class="sc-title">Progression</div>
+      <ul class="sc-pages">
+        <li><a href="progression.html" style="color:var(--muted)">Wristband system</a></li>
+        <li><a href="legend-island.html" style="color:var(--muted)">Legend Island unlock</a></li>
+        <li><a href="achievements.html" style="color:var(--muted)">Achievements (57)</a></li>
+        <li><a href="festival-playlist.html" style="color:var(--muted)">Festival Playlist</a></li>
+        <li><a href="multiplayer-guide.html" style="color:var(--muted)">Multiplayer guide</a></li>
+      </ul>
+    </div>
+
+    <!-- Advanced & Setup — 新增 photo-challenges.html -->
+    <div class="section-card s-coral">
+      <div class="sc-icon">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93l-1.41 1.41M4.93 4.93l1.41 1.41M12 2v2M12 20v2M20 12h2M2 12h2m15.66 5.66l-1.41-1.41M4.34 19.07l1.41-1.41"/></svg>
+      </div>
+      <div class="sc-title">Advanced & Setup</div>
+      <ul class="sc-pages">
+        <li><a href="tuning-guide.html" style="color:var(--muted)">Tuning guide</a></li>
+        <li><a href="drift-guide.html" style="color:var(--muted)">Drift guide</a></li>
+        <li><a href="photo-challenges.html" style="color:var(--muted)">Photo Mode & Challenges</a></li>
+        <li><a href="controller-wheel.html" style="color:var(--muted)">Controller &amp; Wheel</a></li>
+        <li><a href="pc-settings.html" style="color:var(--muted)">Best PC settings</a></li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+</div>
+</div>
+
+<!-- PROGRESSION EXPLAINER -->
+<div class="page-wrap">
+<section>
+  <div class="section-header">
+    <div>
+      <div class="section-label">How FH6 progression works</div>
+      <div class="section-title">Three tracks, one goal</div>
+    </div>
+    <a href="progression.html" class="view-all">Full progression guide →</a>
+  </div>
+
+  <div class="progression-wrap">
+    <div class="prog-title">Understanding Wristbands, Stamps & Horizon Play</div>
+    <div class="prog-sub">// FH6 runs three parallel progression systems simultaneously</div>
+
+    <div class="prog-tracks">
+
+      <div class="prog-track">
+        <div class="pt-label">
+          <div class="pt-dot wrist"></div>
+          Wristbands — Horizon Festival
+        </div>
+        <div class="prog-steps">
+          <div class="ps done"><div class="ps-dot"></div><div class="ps-text">Yellow — qualify at the Invitational</div></div>
+          <div class="ps done"><div class="ps-dot"></div><div class="ps-text">Green — complete road & dirt events</div></div>
+          <div class="ps done"><div class="ps-dot"></div><div class="ps-text">Blue, Pink, Orange — race progression</div></div>
+          <div class="ps done"><div class="ps-dot"></div><div class="ps-text">Purple — 32,500 Festival Points needed</div></div>
+          <div class="ps special"><div class="ps-dot"></div><div class="ps-text">Gold — become Horizon Legend</div></div>
+        </div>
+        <div class="prog-unlock">⚑ Unlocks Legend Island</div>
+      </div>
+
+      <div class="prog-divider"></div>
+
+      <div class="prog-track" style="padding: 0 4px 0 28px;">
+        <div class="pt-label">
+          <div class="pt-dot stamp"></div>
+          Stamps — Discover Japan
+        </div>
+        <div class="prog-steps">
+          <div class="ps done-a"><div class="ps-dot"></div><div class="ps-text">Explore regions, smash mascots</div></div>
+          <div class="ps done-a"><div class="ps-dot"></div><div class="ps-text">Street & Touge races, food deliveries</div></div>
+          <div class="ps done-a"><div class="ps-dot"></div><div class="ps-text">7 stamp levels (Yellow → Gold)</div></div>
+          <div class="ps done-a"><div class="ps-dot"></div><div class="ps-text">Each level unlocks new Barn Find rumors</div></div>
+          <div class="ps special"><div class="ps-dot"></div><div class="ps-text">Gold stamp = Master Explorer</div></div>
+        </div>
+        <div class="prog-unlock" style="border-color: rgba(186,117,23,.3); background: rgba(186,117,23,.05); color: #BA7517;">⚑ Unlocks all 15 Barn Finds</div>
+      </div>
+
+      <div class="prog-divider"></div>
+
+      <div class="prog-track" style="padding: 0 4px 0 28px;">
+        <div class="pt-label">
+          <div class="pt-dot play"></div>
+          Horizon Play — Multiplayer
+        </div>
+        <div class="prog-steps">
+          <div class="ps done-b"><div class="ps-dot"></div><div class="ps-text">Spec Racing online events</div></div>
+          <div class="ps done-b"><div class="ps-dot"></div><div class="ps-text">Touge Showdown (1v1 mountain duel)</div></div>
+          <div class="ps done-b"><div class="ps-dot"></div><div class="ps-text">Eliminator, Hide & Seek, Custom Racing</div></div>
+          <div class="ps done-b"><div class="ps-dot"></div><div class="ps-text">XP feeds its own Horizon Play rank</div></div>
+          <div class="ps special"><div class="ps-dot"></div><div class="ps-text">Fully separate from campaign</div></div>
+        </div>
+        <div class="prog-unlock" style="border-color: rgba(71,197,255,.3); background: rgba(71,197,255,.05); color: var(--accent3);">⚑ Independent multiplayer progression</div>
+      </div>
+
     </div>
   </div>
+</section>
+</div>
 
-  <!-- Best Starter Words -->
-  <div class="section">
-    <h2>🚀 Best Wordle Starter Words</h2>
-    <p class="seo-text">Top-rated <strong>Wordle opening words</strong> that maximize letter coverage on your first guess:</p>
-    <div class="word-list">
-      <span class="word">ADIEU</span><span class="word">AUDIO</span><span class="word">STEAM</span>
-      <span class="word">CRANE</span><span class="word">SLATE</span><span class="word">TRACE</span>
-      <span class="word">LARES</span><span class="word">RAISE</span>
+<!-- FESTIVAL PLAYLIST -->
+<div style="background: var(--bg2); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
+<div class="page-wrap">
+<section style="padding: 36px 0;">
+  <div class="section-header">
+    <div>
+      <div class="section-label">Resets every Thursday</div>
+      <div class="section-title">Festival Playlist — this week</div>
+    </div>
+    <a href="festival-playlist.html" class="view-all">Full playlist guide →</a>
+  </div>
+  <div class="weekly-banner">
+    <div class="weekly-badge">
+      <div class="weekly-badge-label">Week</div>
+      <div class="weekly-badge-val">01</div>
+    </div>
+    <div class="weekly-content">
+      <div class="weekly-title">Season 1 — Spring · May 19 – May 26, 2026</div>
+      <div class="weekly-desc">Complete weekly challenges and championships to earn Playlist Points. Reach 20pts and 40pts milestones to unlock the exclusive season cars — these are time-limited and cannot be bought in the Autoshow.</div>
+      <div class="weekly-tasks">
+        <span class="wtask done">✓ PR Stunt — Speed Trap</span>
+        <span class="wtask done">✓ Seasonal Championship</span>
+        <span class="wtask">Trial — Co-op Race</span>
+        <span class="wtask">Playground Games</span>
+        <span class="wtask">Photo Challenge</span>
+      </div>
     </div>
   </div>
+</section>
+</div>
+</div>
 
-  <!-- Winning Strategy -->
-  <div class="section">
-    <h2>📌 Wordle Winning Strategy &amp; Guide</h2>
-    <ul style="padding-left:20px;line-height:2">
-      <li>Use unique letters in your first 2 guesses to eliminate fast</li>
-      <li>Move yellow letters to new positions on the next guess</li>
-      <li>Never reuse gray letters — they are not in the target word</li>
-      <li>Lock vowels A E I O U early in your <strong>Wordle strategy</strong></li>
-      <li>Avoid rare words to conserve your 6 guesses</li>
-    </ul>
-    <p class="seo-text">Following a consistent <strong>Wordle guide</strong> can help you improve your average guess score and maintain long win streaks.</p>
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div>
+    <div class="footer-logo">FH6<span>Guide</span></div>
+    <div class="footer-note" style="margin-top:6px;">Fan-made guide site · Not affiliated with Playground Games or Xbox Game Studios</div>
   </div>
+  <ul class="footer-links">
+    <li><a href="#">About</a></li>
+    <li><a href="#">Submit a guide</a></li>
+    <li><a href="#">Contact</a></li>
+    <li><a href="#">Privacy</a></li>
+  </ul>
+</footer>
 
-  <!-- SEO text block -->
-  <div class="section">
-    <h2>ℹ️ About Daily Wordle Hub</h2>
-    <p class="seo-text">
-      <strong>Daily Wordle Hub</strong> is your go-to <strong>Wordle guide</strong> and resource for the NYT Wordle puzzle. Every day we provide fresh <strong>Wordle hints and clues</strong> to help you solve the puzzle without spoiling the fun, plus a full <strong>Wordle answer</strong> reveal when you're truly stuck. Our built-in <strong>Wordle word solver</strong> and <strong>Wordle guess simulator</strong> let you practice and strategize directly on this page.
-    </p>
-    <p class="seo-text" style="margin-top:8px;">
-      Browse the <strong>7-day Wordle calendar</strong> to revisit recent puzzles, check your personal win rate and streak stats, and explore our full <a href="history.html" style="color:#538d4e;">Wordle puzzle history archive</a>. Whether you're a beginner looking for a <strong>Wordle tutorial</strong> or a daily player chasing a streak, we have the tools and tips to keep you winning.
-    </p>
-  </div>
-
-  <footer>Wordle Helper &amp; Guide | Daily Wordle Answer, Hints &amp; Solver | 7‑Day Puzzle Archive</footer>
-
-  <script>
-    // ==============================
-    // Eastern Time date logic — locked: 2026-05-14 = #1790
-    // ==============================
-    const BASE_DATE = new Date("2026-05-14T00:00:00Z");
-    const BASE_NUM = 1790;
-
-    function getEasternDate() {
-      return new Date(new Date().toLocaleString("en-US", { timeZone: "America/New_York" }));
-    }
-
-    function getDayDiff(easternToday) {
-      const base = new Date(BASE_DATE);
-      base.setHours(0,0,0,0);
-      const today = new Date(easternToday);
-      today.setHours(0,0,0,0);
-      return Math.floor((today - base) / (1000*60*60*24));
-    }
-
-    const todayET = getEasternDate();
-    const dayDiff = getDayDiff(todayET);
-    const todayNumber = BASE_NUM + dayDiff;
-    const sevenDaysData = [];
-
-    for (let i = 6; i >= 0; i--) {
-      const d = new Date(todayET);
-      d.setDate(todayET.getDate() - i);
-      const num = todayNumber - i;
-      const dateStr = d.toLocaleDateString("en-US", { month:"short", day:"numeric" });
-      sevenDaysData.push({ dateStr, num, isToday: i === 0 });
-    }
-
-    const calendarWrap = document.getElementById("calendarWrap");
-    const quickWrap = document.getElementById("quickWrap");
-    sevenDaysData.forEach(item => {
-      const cls = item.isToday ? "day-box today" : "day-box past";
-      calendarWrap.innerHTML += `<div class="${cls}"><a href="wordle-${item.num}.html">${item.dateStr}<br>#${item.num}</a></div>`;
-      const label = item.isToday ? `Today: ${item.dateStr} #${item.num}` : `${item.dateStr} #${item.num}`;
-      quickWrap.innerHTML += `<a href="wordle-${item.num}.html">${label}</a>`;
-    });
-
-    // Stats
-    let userStats = JSON.parse(localStorage.getItem("wordleUserStats")) || {
-      total: todayNumber, gamesPlayed: 0, wins: 0, currentStreak: 0, guessSum: 0
-    };
-    userStats.total = todayNumber;
-    document.getElementById("totalPuzzles").textContent = userStats.total;
-    document.getElementById("winRate").textContent = userStats.gamesPlayed ? Math.round((userStats.wins / userStats.gamesPlayed) * 100) + "%" : "0%";
-    document.getElementById("streak").textContent = userStats.currentStreak;
-    document.getElementById("avgGuess").textContent = userStats.gamesPlayed ? (userStats.guessSum / userStats.gamesPlayed).toFixed(1) : "0.0";
-
-    // Today's answer date display
-    const todayDateStr = todayET.toLocaleDateString("en-US", { year:"numeric", month:"short", day:"numeric" });
-    document.getElementById("dateText").textContent = `| ${todayDateStr} #${todayNumber}`;
-
-    // Dynamically load today's answer from the subpage (fallback: hidden)
-    // The answer is stored on each daily page; reveal is triggered by user click
-    const showAnsBtn = document.getElementById("showAnsBtn");
-    const dailyAnsBox = document.getElementById("dailyAnsBox");
-    let ansRevealed = false;
-
-    showAnsBtn.onclick = () => {
-      if (!ansRevealed) {
-        // Link to today's answer page for the full reveal
-        dailyAnsBox.innerHTML = `See the full answer, hints and clues on <a href="wordle-${todayNumber}.html" style="color:#538d4e;font-weight:bold;">today's Wordle page #${todayNumber}</a>.`;
-        ansRevealed = true;
-        showAnsBtn.textContent = "View Today's Page ↗";
-        showAnsBtn.onclick = () => { window.location.href = `wordle-${todayNumber}.html`; };
-      }
-    };
-
-    // ==============================
-    // Guess Simulator
-    // ==============================
-    const simBoard = document.getElementById("simBoard");
-    const simGuess = document.getElementById("simGuess");
-    const simSubmit = document.getElementById("simSubmit");
-    const simReset = document.getElementById("simReset");
-    // Simulator uses a placeholder target word for practice mode
-    const simTarget = "crane";
-
-    function getColor(guess, ans) {
-      let arr = [];
-      let ansArr = ans.split('');
-      for (let i = 0; i < 5; i++) {
-        if (guess[i] === ans[i]) { arr.push('green'); ansArr[i] = null; }
-        else arr.push(null);
-      }
-      for (let i = 0; i < 5; i++) {
-        if (arr[i] === 'green') continue;
-        if (ansArr.includes(guess[i])) { arr[i]='yellow'; ansArr[ansArr.indexOf(guess[i])]=null; }
-        else arr[i]='gray';
-      }
-      return arr;
-    }
-
-    simSubmit.onclick = () => {
-      const g = simGuess.value.toLowerCase().replace(/[^a-z]/g,'');
-      if (g.length !== 5) { alert("Please enter a 5-letter word"); return; }
-      const colors = getColor(g, simTarget);
-      let row = '<div class="sim-board-row">';
-      for (let i = 0; i < 5; i++) {
-        row += `<div class="tile ${colors[i]}">${g[i].toUpperCase()}</div>`;
-      }
-      row += '</div>';
-      simBoard.innerHTML += row;
-      simGuess.value = '';
-      if (g === simTarget) {
-        simBoard.innerHTML += '<p style="color:#538d4e;font-weight:bold;margin-top:6px;">🎉 Correct! The word was CRANE.</p>';
-      }
-    };
-
-    simReset.onclick = () => { simBoard.innerHTML = ''; };
-
-    // Enter key support for simulator
-    simGuess.addEventListener('keydown', e => { if (e.key === 'Enter') simSubmit.click(); });
-
-    // ==============================
-    // Word Solver / Filter
-    // ==============================
-    const wordList = [
-"aback","abase","abate","abbey","abbot","abhor","abide","abled","abode","abort",
-"about","above","abuse","abyss","acorn","actor","acute","adage","adapt","adept",
-"admin","admit","adobe","adopt","adult","affix","afire","after","again","agape",
-"agate","agent","agile","aging","aglow","agree","ahead","aisle","alarm","album",
-"alert","algae","align","alike","alive","allay","alley","allot","allow","alloy",
-"alone","along","aloud","alpha","altar","alter","amass","amaze","amber","amble",
-"amend","amiss","amity","among","ample","amply","angel","anger","angle","angry",
-"apart","apple","apply","apron","arbor","arcade","arena","argue","arise","armor",
-"aroma","arrow","artsy","aside","asset","audio","audit","augur","aunty","awake",
-"award","aware","awash","axis","bacon","badge","badly","bagel","baker","baler",
-"ballot","bamboo","banal","banjo","barge","baron","basil","batch","bathe","beach",
-"beard","beast","beech","beefy","began","begin","begun","being","belly","below",
-"bench","berry","binge","birth","bitter","black","blade","blame","blank","blast",
-"bleed","blend","bless","blind","block","blood","blown","blue","blush","board",
-"boast","body","boil","bold","bolt","bomb","bond","bone","bonus","book","boost",
-"border","bore","born","bossy","both","bottle","bottom","bounce","bound","bowel",
-"brain","brand","brass","brave","bread","break","breed","brick","bridge","brief",
-"bright","broad","broken","broom","brown","brush","bucket","build","bulky","bullet",
-"bundle","burly","burst","bushy","butte","cabin","cable","cache","cagey","cakey",
-"caller","calmly","campo","canal","candy","cane","canny","canoe","caper","caput",
-"carat","carry","carve","casey","catch","cater","cause","cedar","cellar","chain",
-"chair","chalk","champ","chance","change","charm","chart","chase","cheap","cheat",
-"check","cheer","chess","chest","chide","chief","child","chill","china","chirp",
-"chore","chose","chunk","cider","circle","city","claim","clamp","clean","clear",
-"climb","clock","close","cloth","cloud","clown","coast","cocoa","code","colon",
-"color","comet","conga","copy","coral","core","corny","couch","could","count",
-"court","cover","crane","crash","crawl","crave","cream","creek","creep","crime",
-"crisp","cross","crowd","crush","cubic","curio","curve","cycle","daily","dance",
-"daisy","death","debts","debut","delay","demon","depth","diary","digit","dirty",
-"dodge","dogma","doubt","draft","drama","dream","dress","drink","drive","early",
-"earth","eager","eagle","eight","elbow","empty","equal","equip","erase","error",
-"event","every","exact","exist","exit","extra","faint","false","fancy","faulty",
-"feast","fence","ferry","fever","fiber","field","fifth","fifty","fight","final",
-"first","fishy","fixer","flame","flash","fleet","flesh","float","floor","flour",
-"flower","fluid","flush","focus","foggy","force","forge","forty","found","foxes",
-"frame","frank","fraud","fresh","front","fruit","funny","gaily","gamer","garden",
-"gauge","ghost","giant","glass","globe","goose","grade","grain","grant","grass",
-"grave","great","green","greet","grief","group","guard","guess","guest","guide",
-"habit","happy","harsh","haste","hatch","haunt","heart","heavy","hello","hinge",
-"hobby","hotel","house","hover","human","hurry","ideal","image","imply","index",
-"inner","input","irony","joint","jolly","judge","juice","karen","keeps","knife",
-"knock","label","lacey","large","laser","later","laugh","layer","learn","lemon",
-"level","light","limit","linen","liver","loose","lucky","lunar","lunch","magic",
-"major","maker","mango","march","match","maybe","meant","media","merit","merge",
-"meter","might","minor","minty","model","modify","money","month","moral","motor",
-"mount","mouse","mouth","music","naked","naval","needy","night","noise","nomad",
-"north","ocean","offer","olive","onion","opera","orbit","order","organ","other",
-"outer","owner","paint","paper","party","paste","patch","pause","peace","peach",
-"pearl","penny","peril","phone","piano","pitch","place","plain","plant","plate",
-"play","plenty","point","poker","polar","power","press","price","pride","prime",
-"print","prior","prize","probe","proof","proud","prove","pulse","punch","queen",
-"quick","quiet","radio","raise","rally","range","rapid","ratio","reach","ready",
-"relax","right","river","roast","roman","rough","round","route","royal","rural",
-"sadly","safe","sailor","salad","salty","sandy","satyr","scale","scare","scene",
-"score","screen","screw","seize","sense","serve","shadow","shake","share","sharp",
-"sheep","sheet","shelf","shell","shift","shine","shirt","shock","shore","short",
-"shout","sight","silky","silly","skill","slate","sleep","slide","slight","small",
-"smile","smoke","snowy","sober","solid","solve","sorry","sound","south","space",
-"spare","speak","speed","spell","spite","split","spoil","spray","stand","start",
-"state","steam","steel","stick","still","stock","stone","store","storm","story",
-"street","strike","strong","sunny","super","sweet","table","taste","teach","thank",
-"their","there","these","thing","think","third","those","three","throw","tight",
-"tiger","tiled","times","today","token","tonic","tooth","total","touch","train",
-"treat","trees","trial","tribe","trick","troll","truth","uncle","under","upper",
-"urban","usage","usual","valid","value","vapor","vault","verge","vital","voice",
-"waste","watch","water","wave","waver","weary","weave","weight","whale","wheat",
-"where","which","white","whole","width","woman","world","worry","worth","would",
-"write","young"
-    ];
-
-    document.getElementById("filterBtn").onclick = () => {
-      const mustHave = document.getElementById("mustHave").value.toLowerCase().replace(/[^a-z]/g,'');
-      const mustNotHave = document.getElementById("mustNotHave").value.toLowerCase().replace(/[^a-z]/g,'');
-      let fixedPos = document.getElementById("fixedPos").value.toLowerCase().replace(/[^a-z_]/g,'').padEnd(5,'_').slice(0,5);
-      let notFixedPos = document.getElementById("notFixedPos").value.toLowerCase().replace(/[^a-z_]/g,'').padEnd(5,'_').slice(0,5);
-
-      let res = wordList.filter(w => {
-        if (w.length !== 5) return false;
-        for (let c of mustHave) if (!w.includes(c)) return false;
-        for (let c of mustNotHave) if (w.includes(c)) return false;
-        for (let i = 0; i < 5; i++) {
-          if (fixedPos[i] !== '_' && w[i] !== fixedPos[i]) return false;
-          if (notFixedPos[i] !== '_' && w[i] === notFixedPos[i]) return false;
-        }
-        return true;
-      });
-
-      const fr = document.getElementById("filterResult");
-      if (res.length === 0) {
-        fr.innerHTML = '<em>No matching 5-letter words found. Try adjusting your filters.</em>';
-      } else {
-        fr.innerHTML = res.map(x => `<span class="word">${x.toUpperCase()}</span>`).join(' ');
-      }
-    };
-  </script>
+<script>
+function toggleNav(){document.getElementById('navDrawer').classList.toggle('open')}
+document.addEventListener('click',function(e){
+  var d=document.getElementById('navDrawer'),b=document.querySelector('.nav-hamburger');
+  if(d&&d.classList.contains('open')&&!d.contains(e.target)&&b&&!b.contains(e.target))
+    d.classList.remove('open')
+});
+document.querySelectorAll('.nav-drawer a').forEach(function(a){
+  a.addEventListener('click',function(){document.getElementById('navDrawer').classList.remove('open')})
+});
+</script>
 </body>
 </html>
