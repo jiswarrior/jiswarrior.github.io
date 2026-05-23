@@ -3,18 +3,37 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Wordle 7‑Day Calendar | Daily Answers & Statistics</title>
-  <meta name="description" content="Check latest 7‑day Wordle answers, hints, stats and history. Daily Wordle puzzle archive with calendar.">
-  <meta name="keywords" content="Wordle 7 day calendar, latest Wordle answers, Wordle stats, daily Wordle history">
+  <title>Wordle 7‑Day Calendar | Today's Wordle Answer, Hints & Solver Guide</title>
+  <meta name="description" content="Check today's Wordle answer, hints, clues and solver. Browse the latest 7-day Wordle calendar, daily Wordle guide, word solver, and puzzle history archive.">
+  <meta name="keywords" content="Wordle today answer, Wordle hints, Wordle clues, Wordle solver, Wordle guide, Wordle cheat, daily Wordle, Wordle 7 day calendar, Wordle word solver, Wordle simulator, Wordle strategy, best Wordle starting words, Wordle archive, Wordle history, Wordle statistics">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://dailywordlehub.com">
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="192x192" href="icon-192x192.png">
   <link rel="icon" type="image/png" sizes="512x512" href="icon-512x512.png">
   <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <meta property="og:title" content="Wordle 7‑Day Calendar | Today's Wordle Answer, Hints & Solver Guide">
+  <meta property="og:description" content="Check today's Wordle answer, hints, clues and solver. Daily Wordle guide and puzzle archive.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:url" content="https://dailywordlehub.com">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Daily Wordle Hub",
+    "url": "https://dailywordlehub.com",
+    "description": "Check today's Wordle answer, hints, solver and 7-day puzzle calendar.",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://dailywordlehub.com/history.html?q={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  }
+  </script>
   <style>
     *{margin:0;padding:0;box-sizing:border-box;font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Arial,sans-serif}
-    body{background:#f6f7f9;padding:15px;max-width:900px;margin:0 auto;line-height:1.5}
+    body{background:#f6f7f9;padding:15px;max-width:900px;margin:0 auto;line-height:1.5;color:#1a1a1b}
     header{text-align:center;margin-bottom:20px}
     h1{color:#538d4e;margin-bottom:8px;font-size:1.5rem}
     .desc{color:#666;margin-bottom:20px}
@@ -22,8 +41,9 @@
     .stat-card{background:white;padding:16px;border-radius:10px;text-align:center;box-shadow:0 1px 3px rgba(0,0,0,0.1)}
     .stat-num{font-size:22px;font-weight:bold;color:#538d4e;margin-bottom:4px}
     .stat-txt{font-size:0.85rem;color:#555}
-    .section{background:white;padding:18px;border-radius:10px;margin-bottom:20px}
-    h2{color:#538d4e;margin-bottom:14px;font-size:1.2rem;border-left:4px solid #538d4e;padding-left:10px}
+    .section{background:white;padding:18px;border-radius:10px;margin-bottom:16px;box-shadow:0 1px 3px rgba(0,0,0,0.08)}
+    h2{color:#538d4e;margin-bottom:12px;font-size:1.1rem;border-left:4px solid #538d4e;padding-left:10px;display:flex;align-items:center;gap:8px}
+    .date-tag{font-size:0.85rem;color:#777;font-weight:normal}
     .calendar-7d{display:grid;grid-template-columns:repeat(7,1fr);gap:8px}
     .day-box{padding:12px 6px;border-radius:8px;text-align:center;background:#f1f1f1}
     .day-box a{text-decoration:none;color:#222;font-weight:500;font-size:0.9rem}
@@ -32,16 +52,42 @@
     .day-box.past{background:#e7f5e6}
     .quick-list{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:10px}
     .quick-list a{background:#f1f1f1;padding:10px;border-radius:6px;text-decoration:none;color:#333;font-size:0.9rem}
+    /* Tools */
+    .tile{width:36px;height:36px;display:flex;align-items:center;justify-content:center;color:white;font-weight:bold;border-radius:4px;font-size:18px}
+    .green{background:#538d4e}
+    .yellow{background:#b59f3b}
+    .gray{background:#787c7e}
+    .color-box{display:flex;gap:8px;margin:6px 0;flex-wrap:wrap;align-items:center;font-size:0.95rem}
+    .word-list{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+    .word{background:#e3e3e3;padding:3px 8px;border-radius:6px;font-weight:500;font-size:0.9rem}
+    .filter-row,.sim-row{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:8px}
+    input{padding:8px;border:1px solid #ddd;border-radius:6px;font-size:0.95rem;width:100%}
+    button{padding:8px 14px;background:#538d4e;color:white;border:none;border-radius:6px;cursor:pointer;font-size:0.95rem}
+    #filterResult,#simBoard{margin-top:10px;padding:8px;background:#f7f7f7;border-radius:6px;min-height:40px}
+    #dailyAnsBox{margin-top:10px;padding:8px;background:#f7f7f7;border-radius:6px;min-height:40px}
+    .sim-board-row{display:flex;gap:5px;margin-bottom:5px}
+    #showAnsBtn{margin-bottom:8px;background:#b59f3b}
+    .compact-row{display:flex;gap:12px;margin-bottom:16px}
+    .compact-row .section{flex:1;margin-bottom:0}
+    ul{padding-left:18px;font-size:0.9rem}
+    .seo-text{color:#555;font-size:0.9rem;line-height:1.7;margin-top:10px}
+    .seo-text strong{color:#538d4e}
     footer{text-align:center;margin-top:30px;color:#777;font-size:0.85rem}
-    @media (max-width:700px){.stats{grid-template-columns:repeat(2,1fr)}.calendar-7d{grid-template-columns:repeat(4,1fr)}}
+    @media(max-width:700px){
+      .stats{grid-template-columns:repeat(2,1fr)}
+      .calendar-7d{grid-template-columns:repeat(4,1fr)}
+      .filter-row,.sim-row{grid-template-columns:1fr}
+      .compact-row{flex-direction:column}
+    }
   </style>
 </head>
 <body>
   <header>
     <h1>Wordle 7‑Day Calendar</h1>
-    <p class="desc">Latest 7 Days Answers | Statistics | <a href="history.html" style="color:#538d4e; text-decoration:none;">Puzzle History</a></p>
+    <p class="desc">Today's Wordle Answer &amp; Hints | Solver &amp; Guide | <a href="history.html" style="color:#538d4e;text-decoration:none;">Puzzle History</a></p>
   </header>
 
+  <!-- Stats -->
   <div class="stats">
     <div class="stat-card"><div class="stat-num" id="totalPuzzles">0</div><div class="stat-txt">Total Puzzles</div></div>
     <div class="stat-card"><div class="stat-num" id="winRate">0%</div><div class="stat-txt">Win Rate</div></div>
@@ -49,41 +95,128 @@
     <div class="stat-card"><div class="stat-num" id="avgGuess">0.0</div><div class="stat-txt">Avg Guesses</div></div>
   </div>
 
+  <!-- 7-Day Calendar -->
   <div class="section">
-    <h2>Latest 7 Days Puzzle Calendar</h2>
+    <h2>📅 Latest 7 Days Puzzle Calendar</h2>
     <div class="calendar-7d" id="calendarWrap"></div>
   </div>
 
+  <!-- Quick Access -->
   <div class="section">
-    <h2>Quick Access (Latest 7 Days)</h2>
+    <h2>⚡ Quick Access (Latest 7 Days)</h2>
     <div class="quick-list" id="quickWrap"></div>
   </div>
 
-  <footer>Wordle Helper | 7‑Day Daily Answer Archive</footer>
+  <!-- Today's Wordle Answer -->
+  <div class="section">
+    <h2>📅 Today's Wordle Answer <span class="date-tag" id="dateText"></span></h2>
+    <button id="showAnsBtn">🔓 Reveal Today's Answer</button>
+    <div id="dailyAnsBox">🔒 Click the button above to reveal today's Wordle answer</div>
+  </div>
+
+  <!-- Guess Simulator -->
+  <div class="section">
+    <h2>🎮 Wordle Guess Simulator</h2>
+    <p class="seo-text" style="margin-bottom:10px;">Practice your <strong>Wordle guesses</strong> with real color feedback — green, yellow and gray tiles just like the official game.</p>
+    <div class="sim-row">
+      <input type="text" id="simGuess" maxlength="5" placeholder="Enter 5-letter word">
+      <button id="simSubmit">Guess</button>
+    </div>
+    <div id="simBoard"></div>
+    <div style="margin-top:8px;"><button id="simReset">Reset Board</button></div>
+  </div>
+
+  <!-- Word Solver -->
+  <div class="section">
+    <h2>🔍 Wordle Word Solver</h2>
+    <p class="seo-text" style="margin-bottom:10px;">Use our <strong>Wordle solver</strong> to filter possible answers. Enter known letters, excluded letters, and fixed positions to find matching words fast.</p>
+    <div class="filter-row">
+      <input type="text" id="mustHave" placeholder="Include letters (e.g. we)">
+      <input type="text" id="mustNotHave" placeholder="Exclude letters (e.g. hit)">
+    </div>
+    <div class="filter-row">
+      <input type="text" id="fixedPos" placeholder="Fixed positions (e.g. w____)">
+      <input type="text" id="notFixedPos" placeholder="Wrong positions (e.g. ____e)">
+    </div>
+    <button id="filterBtn">🔎 Filter Words</button>
+    <div id="filterResult"></div>
+  </div>
+
+  <!-- Rules + Colors side-by-side -->
+  <div class="compact-row">
+    <div class="section">
+      <h2>🎯 Wordle Rules & How to Play</h2>
+      <ul>
+        <li>Guess one 5‑letter word each day</li>
+        <li>You have 6 attempts maximum</li>
+        <li>Every guess must be a valid English word</li>
+        <li>Color tiles guide you to the answer</li>
+      </ul>
+    </div>
+    <div class="section">
+      <h2>🎨 Color Hint Guide</h2>
+      <div class="color-box"><div class="tile green">G</div> Correct letter &amp; position</div>
+      <div class="color-box"><div class="tile yellow">Y</div> Right letter, wrong position</div>
+      <div class="color-box"><div class="tile gray">X</div> Letter not in the word</div>
+    </div>
+  </div>
+
+  <!-- Best Starter Words -->
+  <div class="section">
+    <h2>🚀 Best Wordle Starter Words</h2>
+    <p class="seo-text">Top-rated <strong>Wordle opening words</strong> that maximize letter coverage on your first guess:</p>
+    <div class="word-list">
+      <span class="word">ADIEU</span><span class="word">AUDIO</span><span class="word">STEAM</span>
+      <span class="word">CRANE</span><span class="word">SLATE</span><span class="word">TRACE</span>
+      <span class="word">LARES</span><span class="word">RAISE</span>
+    </div>
+  </div>
+
+  <!-- Winning Strategy -->
+  <div class="section">
+    <h2>📌 Wordle Winning Strategy &amp; Guide</h2>
+    <ul style="padding-left:20px;line-height:2">
+      <li>Use unique letters in your first 2 guesses to eliminate fast</li>
+      <li>Move yellow letters to new positions on the next guess</li>
+      <li>Never reuse gray letters — they are not in the target word</li>
+      <li>Lock vowels A E I O U early in your <strong>Wordle strategy</strong></li>
+      <li>Avoid rare words to conserve your 6 guesses</li>
+    </ul>
+    <p class="seo-text">Following a consistent <strong>Wordle guide</strong> can help you improve your average guess score and maintain long win streaks.</p>
+  </div>
+
+  <!-- SEO text block -->
+  <div class="section">
+    <h2>ℹ️ About Daily Wordle Hub</h2>
+    <p class="seo-text">
+      <strong>Daily Wordle Hub</strong> is your go-to <strong>Wordle guide</strong> and resource for the NYT Wordle puzzle. Every day we provide fresh <strong>Wordle hints and clues</strong> to help you solve the puzzle without spoiling the fun, plus a full <strong>Wordle answer</strong> reveal when you're truly stuck. Our built-in <strong>Wordle word solver</strong> and <strong>Wordle guess simulator</strong> let you practice and strategize directly on this page.
+    </p>
+    <p class="seo-text" style="margin-top:8px;">
+      Browse the <strong>7-day Wordle calendar</strong> to revisit recent puzzles, check your personal win rate and streak stats, and explore our full <a href="history.html" style="color:#538d4e;">Wordle puzzle history archive</a>. Whether you're a beginner looking for a <strong>Wordle tutorial</strong> or a daily player chasing a streak, we have the tools and tips to keep you winning.
+    </p>
+  </div>
+
+  <footer>Wordle Helper &amp; Guide | Daily Wordle Answer, Hints &amp; Solver | 7‑Day Puzzle Archive</footer>
 
   <script>
     // ==============================
-    // 终极修复版：纯美东时间，不受用户时区影响
-    // 永久锁定：美东时间 2026-05-14 = #1790
+    // Eastern Time date logic — locked: 2026-05-14 = #1790
     // ==============================
     const BASE_DATE = new Date("2026-05-14T00:00:00Z");
     const BASE_NUM = 1790;
 
-    // 强制获取【美国纽约/美东时间】，不看用户电脑时间
     function getEasternDate() {
       return new Date(new Date().toLocaleString("en-US", { timeZone: "America/New_York" }));
     }
 
-    // 计算两个日期差多少天（纯美东时间，绝对正确）
     function getDayDiff(easternToday) {
       const base = new Date(BASE_DATE);
-      base.setHours(0, 0, 0, 0);
+      base.setHours(0,0,0,0);
       const today = new Date(easternToday);
-      today.setHours(0, 0, 0, 0);
-      return Math.floor((today - base) / (1000 * 60 * 60 * 24));
+      today.setHours(0,0,0,0);
+      return Math.floor((today - base) / (1000*60*60*24));
     }
 
-    // 生成 7 天数据
     const todayET = getEasternDate();
     const dayDiff = getDayDiff(todayET);
     const todayNumber = BASE_NUM + dayDiff;
@@ -93,14 +226,12 @@
       const d = new Date(todayET);
       d.setDate(todayET.getDate() - i);
       const num = todayNumber - i;
-      const dateStr = d.toLocaleDateString("en-US", { month: "short", day: "numeric" });
+      const dateStr = d.toLocaleDateString("en-US", { month:"short", day:"numeric" });
       sevenDaysData.push({ dateStr, num, isToday: i === 0 });
     }
 
-    // 渲染页面
     const calendarWrap = document.getElementById("calendarWrap");
     const quickWrap = document.getElementById("quickWrap");
-
     sevenDaysData.forEach(item => {
       const cls = item.isToday ? "day-box today" : "day-box past";
       calendarWrap.innerHTML += `<div class="${cls}"><a href="wordle-${item.num}.html">${item.dateStr}<br>#${item.num}</a></div>`;
@@ -108,16 +239,180 @@
       quickWrap.innerHTML += `<a href="wordle-${item.num}.html">${label}</a>`;
     });
 
-    // 统计
+    // Stats
     let userStats = JSON.parse(localStorage.getItem("wordleUserStats")) || {
       total: todayNumber, gamesPlayed: 0, wins: 0, currentStreak: 0, guessSum: 0
     };
     userStats.total = todayNumber;
-
     document.getElementById("totalPuzzles").textContent = userStats.total;
     document.getElementById("winRate").textContent = userStats.gamesPlayed ? Math.round((userStats.wins / userStats.gamesPlayed) * 100) + "%" : "0%";
     document.getElementById("streak").textContent = userStats.currentStreak;
     document.getElementById("avgGuess").textContent = userStats.gamesPlayed ? (userStats.guessSum / userStats.gamesPlayed).toFixed(1) : "0.0";
+
+    // Today's answer date display
+    const todayDateStr = todayET.toLocaleDateString("en-US", { year:"numeric", month:"short", day:"numeric" });
+    document.getElementById("dateText").textContent = `| ${todayDateStr} #${todayNumber}`;
+
+    // Dynamically load today's answer from the subpage (fallback: hidden)
+    // The answer is stored on each daily page; reveal is triggered by user click
+    const showAnsBtn = document.getElementById("showAnsBtn");
+    const dailyAnsBox = document.getElementById("dailyAnsBox");
+    let ansRevealed = false;
+
+    showAnsBtn.onclick = () => {
+      if (!ansRevealed) {
+        // Link to today's answer page for the full reveal
+        dailyAnsBox.innerHTML = `See the full answer, hints and clues on <a href="wordle-${todayNumber}.html" style="color:#538d4e;font-weight:bold;">today's Wordle page #${todayNumber}</a>.`;
+        ansRevealed = true;
+        showAnsBtn.textContent = "View Today's Page ↗";
+        showAnsBtn.onclick = () => { window.location.href = `wordle-${todayNumber}.html`; };
+      }
+    };
+
+    // ==============================
+    // Guess Simulator
+    // ==============================
+    const simBoard = document.getElementById("simBoard");
+    const simGuess = document.getElementById("simGuess");
+    const simSubmit = document.getElementById("simSubmit");
+    const simReset = document.getElementById("simReset");
+    // Simulator uses a placeholder target word for practice mode
+    const simTarget = "crane";
+
+    function getColor(guess, ans) {
+      let arr = [];
+      let ansArr = ans.split('');
+      for (let i = 0; i < 5; i++) {
+        if (guess[i] === ans[i]) { arr.push('green'); ansArr[i] = null; }
+        else arr.push(null);
+      }
+      for (let i = 0; i < 5; i++) {
+        if (arr[i] === 'green') continue;
+        if (ansArr.includes(guess[i])) { arr[i]='yellow'; ansArr[ansArr.indexOf(guess[i])]=null; }
+        else arr[i]='gray';
+      }
+      return arr;
+    }
+
+    simSubmit.onclick = () => {
+      const g = simGuess.value.toLowerCase().replace(/[^a-z]/g,'');
+      if (g.length !== 5) { alert("Please enter a 5-letter word"); return; }
+      const colors = getColor(g, simTarget);
+      let row = '<div class="sim-board-row">';
+      for (let i = 0; i < 5; i++) {
+        row += `<div class="tile ${colors[i]}">${g[i].toUpperCase()}</div>`;
+      }
+      row += '</div>';
+      simBoard.innerHTML += row;
+      simGuess.value = '';
+      if (g === simTarget) {
+        simBoard.innerHTML += '<p style="color:#538d4e;font-weight:bold;margin-top:6px;">🎉 Correct! The word was CRANE.</p>';
+      }
+    };
+
+    simReset.onclick = () => { simBoard.innerHTML = ''; };
+
+    // Enter key support for simulator
+    simGuess.addEventListener('keydown', e => { if (e.key === 'Enter') simSubmit.click(); });
+
+    // ==============================
+    // Word Solver / Filter
+    // ==============================
+    const wordList = [
+"aback","abase","abate","abbey","abbot","abhor","abide","abled","abode","abort",
+"about","above","abuse","abyss","acorn","actor","acute","adage","adapt","adept",
+"admin","admit","adobe","adopt","adult","affix","afire","after","again","agape",
+"agate","agent","agile","aging","aglow","agree","ahead","aisle","alarm","album",
+"alert","algae","align","alike","alive","allay","alley","allot","allow","alloy",
+"alone","along","aloud","alpha","altar","alter","amass","amaze","amber","amble",
+"amend","amiss","amity","among","ample","amply","angel","anger","angle","angry",
+"apart","apple","apply","apron","arbor","arcade","arena","argue","arise","armor",
+"aroma","arrow","artsy","aside","asset","audio","audit","augur","aunty","awake",
+"award","aware","awash","axis","bacon","badge","badly","bagel","baker","baler",
+"ballot","bamboo","banal","banjo","barge","baron","basil","batch","bathe","beach",
+"beard","beast","beech","beefy","began","begin","begun","being","belly","below",
+"bench","berry","binge","birth","bitter","black","blade","blame","blank","blast",
+"bleed","blend","bless","blind","block","blood","blown","blue","blush","board",
+"boast","body","boil","bold","bolt","bomb","bond","bone","bonus","book","boost",
+"border","bore","born","bossy","both","bottle","bottom","bounce","bound","bowel",
+"brain","brand","brass","brave","bread","break","breed","brick","bridge","brief",
+"bright","broad","broken","broom","brown","brush","bucket","build","bulky","bullet",
+"bundle","burly","burst","bushy","butte","cabin","cable","cache","cagey","cakey",
+"caller","calmly","campo","canal","candy","cane","canny","canoe","caper","caput",
+"carat","carry","carve","casey","catch","cater","cause","cedar","cellar","chain",
+"chair","chalk","champ","chance","change","charm","chart","chase","cheap","cheat",
+"check","cheer","chess","chest","chide","chief","child","chill","china","chirp",
+"chore","chose","chunk","cider","circle","city","claim","clamp","clean","clear",
+"climb","clock","close","cloth","cloud","clown","coast","cocoa","code","colon",
+"color","comet","conga","copy","coral","core","corny","couch","could","count",
+"court","cover","crane","crash","crawl","crave","cream","creek","creep","crime",
+"crisp","cross","crowd","crush","cubic","curio","curve","cycle","daily","dance",
+"daisy","death","debts","debut","delay","demon","depth","diary","digit","dirty",
+"dodge","dogma","doubt","draft","drama","dream","dress","drink","drive","early",
+"earth","eager","eagle","eight","elbow","empty","equal","equip","erase","error",
+"event","every","exact","exist","exit","extra","faint","false","fancy","faulty",
+"feast","fence","ferry","fever","fiber","field","fifth","fifty","fight","final",
+"first","fishy","fixer","flame","flash","fleet","flesh","float","floor","flour",
+"flower","fluid","flush","focus","foggy","force","forge","forty","found","foxes",
+"frame","frank","fraud","fresh","front","fruit","funny","gaily","gamer","garden",
+"gauge","ghost","giant","glass","globe","goose","grade","grain","grant","grass",
+"grave","great","green","greet","grief","group","guard","guess","guest","guide",
+"habit","happy","harsh","haste","hatch","haunt","heart","heavy","hello","hinge",
+"hobby","hotel","house","hover","human","hurry","ideal","image","imply","index",
+"inner","input","irony","joint","jolly","judge","juice","karen","keeps","knife",
+"knock","label","lacey","large","laser","later","laugh","layer","learn","lemon",
+"level","light","limit","linen","liver","loose","lucky","lunar","lunch","magic",
+"major","maker","mango","march","match","maybe","meant","media","merit","merge",
+"meter","might","minor","minty","model","modify","money","month","moral","motor",
+"mount","mouse","mouth","music","naked","naval","needy","night","noise","nomad",
+"north","ocean","offer","olive","onion","opera","orbit","order","organ","other",
+"outer","owner","paint","paper","party","paste","patch","pause","peace","peach",
+"pearl","penny","peril","phone","piano","pitch","place","plain","plant","plate",
+"play","plenty","point","poker","polar","power","press","price","pride","prime",
+"print","prior","prize","probe","proof","proud","prove","pulse","punch","queen",
+"quick","quiet","radio","raise","rally","range","rapid","ratio","reach","ready",
+"relax","right","river","roast","roman","rough","round","route","royal","rural",
+"sadly","safe","sailor","salad","salty","sandy","satyr","scale","scare","scene",
+"score","screen","screw","seize","sense","serve","shadow","shake","share","sharp",
+"sheep","sheet","shelf","shell","shift","shine","shirt","shock","shore","short",
+"shout","sight","silky","silly","skill","slate","sleep","slide","slight","small",
+"smile","smoke","snowy","sober","solid","solve","sorry","sound","south","space",
+"spare","speak","speed","spell","spite","split","spoil","spray","stand","start",
+"state","steam","steel","stick","still","stock","stone","store","storm","story",
+"street","strike","strong","sunny","super","sweet","table","taste","teach","thank",
+"their","there","these","thing","think","third","those","three","throw","tight",
+"tiger","tiled","times","today","token","tonic","tooth","total","touch","train",
+"treat","trees","trial","tribe","trick","troll","truth","uncle","under","upper",
+"urban","usage","usual","valid","value","vapor","vault","verge","vital","voice",
+"waste","watch","water","wave","waver","weary","weave","weight","whale","wheat",
+"where","which","white","whole","width","woman","world","worry","worth","would",
+"write","young"
+    ];
+
+    document.getElementById("filterBtn").onclick = () => {
+      const mustHave = document.getElementById("mustHave").value.toLowerCase().replace(/[^a-z]/g,'');
+      const mustNotHave = document.getElementById("mustNotHave").value.toLowerCase().replace(/[^a-z]/g,'');
+      let fixedPos = document.getElementById("fixedPos").value.toLowerCase().replace(/[^a-z_]/g,'').padEnd(5,'_').slice(0,5);
+      let notFixedPos = document.getElementById("notFixedPos").value.toLowerCase().replace(/[^a-z_]/g,'').padEnd(5,'_').slice(0,5);
+
+      let res = wordList.filter(w => {
+        if (w.length !== 5) return false;
+        for (let c of mustHave) if (!w.includes(c)) return false;
+        for (let c of mustNotHave) if (w.includes(c)) return false;
+        for (let i = 0; i < 5; i++) {
+          if (fixedPos[i] !== '_' && w[i] !== fixedPos[i]) return false;
+          if (notFixedPos[i] !== '_' && w[i] === notFixedPos[i]) return false;
+        }
+        return true;
+      });
+
+      const fr = document.getElementById("filterResult");
+      if (res.length === 0) {
+        fr.innerHTML = '<em>No matching 5-letter words found. Try adjusting your filters.</em>';
+      } else {
+        fr.innerHTML = res.map(x => `<span class="word">${x.toUpperCase()}</span>`).join(' ');
+      }
+    };
   </script>
 </body>
 </html>
