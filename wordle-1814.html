@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8" />
+  <!-- 核心SEO：移动端优先，谷歌排名第一因子 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <!-- 1. Meta Description：谷歌搜索结果展示文案（高权重） -->
+  <meta name="description" content="Get today's Wordle hints, clues, solver, and answer for daily Wordle puzzle. Use our Wordle simulator and word solver to win every game quickly.">
+  <!-- 2. Meta Keywords：关键词布局 -->
+  <meta name="keywords" content="Wordle today answer, Wordle hints, Wordle clues, Wordle solver, Wordle cheat, daily Wordle solution, Wordle simulator">
+  <title>Wordle 7‑Day Calendar | Daily Answers & Statistics</title>
+  <!-- 👇 新增这行代码（关键）👇 -->
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <!-- 👆 新增这行代码（关键）👆 -->
+  <!-- 原有 Favicon 保留（给浏览器用） -->
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<!-- 新增谷歌抓取用的高分辨率图标 -->
+<link rel="icon" type="image/png" sizes="192x192" href="icon-192x192.png">
+<link rel="icon" type="image/png" sizes="512x512" href="icon-512x512.png">
+<!-- 苹果/通用高分辨率图标（辅助谷歌抓取） -->
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <!-- 3. 爬虫指令：允许索引，允许抓取 -->
+  <meta name="robots" content="index, follow">
+  <!-- 4. 规范链接，避免重复页面 -->
+  <link rel="canonical" href="https://dailywordlehub.com">
+  <!-- 5. 社交平台预览优化（OG标签） -->
+  <meta property="og:title" content="Today's Wordle Hints, Answer and Help">
+  <meta property="og:description" content="Get today's Wordle hints, clues, solver, and answer for daily Wordle puzzle.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="en_US">
+
+  <title id="seoTitle">Today's Wordle Hints, Answer and Help</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+    }
+
+    body {
+      background: #fafafa;
+      color: #1a1a1b;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 15px;
+      line-height: 1.5;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 15px;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .header-left {
+      flex-shrink: 0;
+    }
+
+    .home-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #f0f7ef;
+      color: #538d4e;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.9rem;
+      padding: 6px 12px;
+      border-radius: 40px;
+      transition: all 0.2s;
+      border: 1px solid #d0e6cc;
+    }
+
+    .home-link:hover {
+      background: #e2f0df;
+      border-color: #538d4e;
+      transform: translateY(-1px);
+    }
+
+    .header-center {
+      flex: 1;
+      text-align: center;
+    }
+
+    h1 {
+      color: #538d4e;
+      margin-bottom: 0;
+      font-size: 1.4rem;
+    }
+
+    .lang-switch {
+      display: flex;
+      gap: 6px;
+      flex-shrink: 0;
+    }
+    .lang-btn {
+      padding: 4px 8px;
+      border: 1px solid #538d4e;
+      background: white;
+      color: #538d4e;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 0.85rem;
+    }
+    .lang-btn.active {
+      background: #538d4e;
+      color: white;
+    }
+
+    .section {
+      background: white;
+      padding: 12px 15px;
+      border-radius: 10px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+      margin-bottom: 12px;
+    }
+
+    h2 {
+      color: #538d4e;
+      margin-bottom: 8px;
+      font-size: 1.1rem;
+      border-left: 3px solid #538d4e;
+      padding-left: 8px;
+      display: flex;
+      gap: 8px;
+      align-items: center;
+    }
+    .date-tag {
+      font-size: 0.85rem;
+      color: #777;
+      font-weight: normal;
+    }
+
+    .color-box {
+      display: flex;
+      gap: 8px;
+      margin: 6px 0;
+      flex-wrap: wrap;
+      align-items: center;
+      font-size: 0.95rem;
+    }
+
+    .tile {
+      width: 36px;
+      height: 36px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: bold;
+      border-radius: 4px;
+      font-size: 18px;
+    }
+
+    .green { background: #538d4e; }
+    .yellow { background: #b59f3b; }
+    .gray { background: #787c7e; }
+
+    .word-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 8px;
+    }
+
+    .word {
+      background: #e3e3e3;
+      padding: 3px 8px;
+      border-radius: 6px;
+      font-weight: 500;
+      font-size: 0.9rem;
+    }
+
+    .filter-row, .sim-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+      margin-bottom: 8px;
+    }
+    @media (max-width:600px){
+      .filter-row, .sim-row {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    input {
+      padding: 8px;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      font-size: 0.95rem;
+    }
+
+    button {
+      padding: 8px 12px;
+      background: #538d4e;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 0.95rem;
+    }
+
+    #filterResult, #simBoard {
+      margin-top: 10px;
+      padding: 8px;
+      background: #f7f7f7;
+      border-radius: 6px;
+      min-height: 40px;
+    }
+
+    #dailyAnsBox {
+      margin-top: 10px;
+      padding: 8px;
+      background: #f7f7f7;
+      border-radius: 6px;
+      min-height: 40px;
+    }
+
+    .sim-board-row {
+      display: flex;
+      gap: 5px;
+      margin-bottom: 5px;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 20px;
+      color: #666;
+      font-size: 0.85rem;
+    }
+
+    /* 双语隐藏 */
+    .zh, .en { display: none; }
+    .show-zh .zh { display: inline; }
+    .show-en .en { display: inline; }
+
+    /* 答案按钮样式 */
+    #showAnsBtn {
+      margin-bottom: 8px;
+      background: #b59f3b;
+    }
+
+    /* 规则与颜色提示紧凑布局 */
+    .compact-row {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+    .compact-row .section {
+      flex: 1;
+      margin-bottom: 0;
+    }
+    ul {
+      padding-left: 18px;
+      font-size: 0.9rem;
+    }
+    @media (max-width:600px) {
+      .compact-row {
+        flex-direction: column;
+        gap: 12px;
+      }
+      header {
+        flex-direction: column;
+      }
+      .header-center {
+        order: 2;
+      }
+      .lang-switch {
+        order: 3;
+      }
+      .header-left {
+        order: 1;
+      }
+    }
+  </style>
+  <!-- 6. 谷歌结构化数据 Schema.org（可出搜索卡片，流量暴涨） -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Game",
+    "name":"Today's Wordle Hints, Answer and Help",
+    "description":"Get today's Wordle hints, clues, solver, and answer for daily Wordle puzzle. Use our Wordle simulator and word solver to win every game quickly.",
+    "genre":"Word Puzzle Game",
+    "keywords":"Wordle, Wordle hints, Wordle answer, Wordle solver, daily Wordle",
+    "publisher":{"@type":"Organization","name":"Wordle Helper Guide"}
+  }
+  </script>
+</head>
+<body class="show-en">
+  <header>
+    <div class="header-left">
+      <a href="https://dailywordlehub.com/" class="home-link">
+        <span class="zh">🏠 首页</span>
+        <span class="en">🏠 Home</span>
+      </a>
+    </div>
+    <div class="header-center">
+      <h1 id="mainTitle"></h1>
+    </div>
+    <div class="lang-switch">
+      <button class="lang-btn" id="btnZh">中文</button>
+      <button class="lang-btn active" id="btnEn">English</button>
+    </div>
+  </header>
+
+  <main>
+    <!-- 紧凑布局：规则 + 颜色提示 并排 -->
+    <div class="compact-row">
+      <!-- 游戏规则 -->
+      <section class="section">
+        <h2>
+          <span class="zh">🎯 游戏规则</span>
+          <span class="en">🎯 Wordle Rules</span>
+        </h2>
+        <ul class="zh">
+          <li>每天 1 个 5 字母英文单词</li>
+          <li>最多 6 次猜测机会</li>
+          <li>每次猜测必须是有效单词</li>
+          <li>根据颜色提示推理答案</li>
+        </ul>
+        <ul class="en">
+          <li>One 5‑letter word daily</li>
+          <li>Max 6 guesses per day</li>
+          <li>Each guess must be valid English word</li>
+          <li>Use color hints to solve the puzzle</li>
+        </ul>
+      </section>
+
+      <!-- 颜色含义 -->
+      <section class="section">
+        <h2>
+          <span class="zh">🎨 颜色含义</span>
+          <span class="en">🎨 Color Hints</span>
+        </h2>
+        <div class="color-box">
+          <div class="tile green">G</div>
+          <span class="zh">正确+位置正确</span>
+          <span class="en">Correct letter & position</span>
+        </div>
+        <div class="color-box">
+          <div class="tile yellow">Y</div>
+          <span class="zh">存在+位置错误</span>
+          <span class="en">Letter exists, wrong position</span>
+        </div>
+        <div class="color-box">
+          <div class="tile gray">X</div>
+          <span class="zh">字母不存在</span>
+          <span class="en">Letter not in target word</span>
+        </div>
+      </section>
+    </div>
+
+    <!-- 最佳开局词 -->
+    <section class="section">
+      <h2>
+        <span class="zh">🚀 最佳开局词</span>
+        <span class="en">🚀 Best Wordle Starter Words</span>
+      </h2>
+      <div class="word-list">
+        <span class="word">ADIEU</span>
+        <span class="word">AUDIO</span>
+        <span class="word">STEAM</span>
+        <span class="word">CRANE</span>
+        <span class="word">SLATE</span>
+        <span class="word">TRACE</span>
+        <span class="word">LARES</span>
+        <span class="word">RAISE</span>
+      </div>
+    </section>
+
+    <!-- 猜词模拟器（第一屏可见，用户留存更高，间接提升SEO） -->
+    <section class="section">
+      <h2>
+        <span class="zh">🎮 猜词模拟器</span>
+        <span class="en">🎮 Wordle Guess Simulator</span>
+      </h2>
+      <div class="sim-row">
+        <input type="text" id="simGuess" maxlength="5" placeholder="Enter 5 letters" data-zh="输入5字母单词" data-en="Enter 5 letters">
+        <button id="simSubmit">
+          <span class="zh">模拟猜测</span>
+          <span class="en">Guess</span>
+        </button>
+      </div>
+      <div id="simBoard"></div>
+      <div style="margin-top:8px;">
+        <button id="simReset">
+          <span class="zh">重置</span>
+          <span class="en">Reset</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- 单词过滤器 -->
+    <section class="section">
+      <h2>
+        <span class="zh">🔍 单词过滤器</span>
+        <span class="en">🔍 Wordle Word Solver</span>
+      </h2>
+      <div class="filter-row">
+        <div>
+          <input type="text" id="mustHave" placeholder="Include letters e.g. we" data-zh="包含字母 例:we" data-en="Include letters e.g. we">
+        </div>
+        <div>
+          <input type="text" id="mustNotHave" placeholder="Exclude letters e.g. hit" data-zh="排除字母 例:hit" data-en="Exclude letters e.g. hit">
+        </div>
+      </div>
+      <div class="filter-row">
+        <div>
+          <input type="text" id="fixedPos" placeholder="Fixed 5 chars e.g. w____" data-zh="固定位置(5位) 例:w____" data-en="Fixed 5 chars e.g. w____">
+        </div>
+        <div>
+          <input type="text" id="notFixedPos" placeholder="Not fixed 5 chars e.g. ____e" data-zh="已知但不在这里(5位) 例:____e" data-en="Not fixed 5 chars e.g. ____e">
+        </div>
+      </div>
+      <button id="filterBtn">
+        <span class="zh">开始筛选</span>
+        <span class="en">Filter Words</span>
+      </button>
+      <div id="filterResult"></div>
+    </section>
+
+    <!-- 每日答案 -->
+    <section class="section">
+      <h2>
+        <span class="zh">📅 今日答案</span>
+        <span class="en">📅 Today's Wordle Answer</span>
+        <span class="date-tag" id="dateText">| 2025‑05‑14</span>
+      </h2>
+      <button id="showAnsBtn">
+        <span class="zh">确认查看答案</span>
+        <span class="en">Reveal Answer</span>
+      </button>
+      <div id="dailyAnsBox">
+        <span class="zh">🔒 点击上方按钮查看</span>
+        <span class="en">🔒 Click button to reveal today's Wordle answer</span>
+      </div>
+    </section>
+
+    <!-- 攻略策略 -->
+    <section class="section">
+      <h2>
+        <span class="zh">📌 必胜策略</span>
+        <span class="en">📌 Wordle Winning Strategy</span>
+      </h2>
+      <ul class="zh" style="padding-left:20px;">
+        <li>前2次不重复字母，最大化排除</li>
+        <li>黄色字母立刻更换位置</li>
+        <li>灰色字母全程不再使用</li>
+        <li>优先锁定元音 A E I O U</li>
+        <li>避免生僻词浪费机会</li>
+      </ul>
+      <ul class="en" style="padding-left:20px;">
+        <li>First 2 guesses with unique letters</li>
+        <li>Move yellow letters to new positions</li>
+        <li>Avoid gray letters completely</li>
+        <li>Find vowels A E I O U first</li>
+        <li>Skip rare words to save guesses</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <span class="zh">Wordle 攻略站 | 每日Wordle答案与提示</span>
+    <span class="en">Wordle Helper | Daily Wordle Hints & Answer Guide</span>
+    <!-- 新增指向首页的链接，样式与站点主题一致，支持中英文切换 -->
+    <div style="margin-top: 12px;">
+      <a href="https://dailywordlehub.com/" style="color: #538d4e; text-decoration: none; border-bottom: 1px dotted #538d4e; padding-bottom: 2px;">
+        <span class="zh">🏠 返回 Wordle 首页</span>
+        <span class="en">🏠 Back to Wordle Hub</span>
+      </a>
+    </div>
+  </footer>
+
+  <script>
+    const body = document.body;
+    const btnZh = document.getElementById('btnZh');
+    const btnEn = document.getElementById('btnEn');
+    const allInputs = document.querySelectorAll('input[data-zh][data-en]');
+    const dateTextEl = document.getElementById('dateText');
+    const mainTitle = document.getElementById('mainTitle');
+    const seoTitleEl = document.getElementById('seoTitle');
+
+    // ====================== 每日更新区域（只改这里，SEO自动同步）======================
+    // 1. 标题日期：May 17
+    const titleDate = "June 7";
+    // 2. 标题编号：#1793
+    const titleNumber = "#1814";
+    // 3. 今日答案
+    let dailyAnswer = "thumb";
+    // 4. 答案板块显示日期
+    let updateDate = "2025‑06‑07";
+    // ==================================================================
+
+    // 自动生成主标题 + SEO标题，同步更新
+    const pageTitle = `Today's Wordle Hints, Answer and Help for ${titleDate}, ${titleNumber}`;
+    mainTitle.textContent = pageTitle;
+    seoTitleEl.textContent = pageTitle;
+    dateTextEl.textContent = `| ${updateDate}`;
+
+    function updateLang() {
+      allInputs.forEach(input => {
+        if (body.classList.contains('show-en')) {
+          input.placeholder = input.dataset.en;
+        } else {
+          input.placeholder = input.dataset.zh;
+        }
+      });
+    }
+
+    btnZh.onclick = ()=>{
+      body.className = 'show-zh';
+      btnZh.classList.add('active');
+      btnEn.classList.remove('active');
+      updateLang();
+    }
+    btnEn.onclick = ()=>{
+      body.className = 'show-en';
+      btnEn.classList.add('active');
+      btnZh.classList.remove('active');
+      updateLang();
+    };
+
+    updateLang();
+
+    // 5字母官方Wordle词库
+    const wordList = [
+"aback","abase","abate","abbey","abbot","abhor","abide","abled","abode","abort",
+"about","above","abuse","abyss","acorn","actor","acute","adage","adapt","adept",
+"admin","admit","adobe","adopt","adult","affix","afire","after","again","agape",
+"agate","agent","agile","aging","aglow","agree","ahead","aisle","alarm","album",
+"alert","algae","align","alike","alive","allay","alley","allot","allow","alloy",
+"alone","along","aloud","alpha","altar","alter","amass","amaze","amber","amble",
+"amend","amiss","amity","among","ample","amply","angel","anger","angle","angry",
+"apart","apple","apply","apron","arbor","arcade","arena","argue","arise","armor",
+"aroma","arrow","artsy","aside","asset","audio","audit","augur","aunty","awake",
+"award","aware","awash","axis","bacon","badge","badly","bagel","baker","baler",
+"ballot","bamboo","banal","banjo","barge","baron","basil","batch","bathe","beach",
+"beard","beast","beech","beefy","began","begin","begun","being","belly","below",
+"bench","berry","binge","birth","bitter","black","blade","blame","blank","blast",
+"bleed","blend","bless","blind","block","blood","blown","blue","blush","board",
+"boast","body","boil","bold","bolt","bomb","bond","bone","bonus","book","boost",
+"border","bore","born","bossy","both","bottle","bottom","bounce","bound","bowel",
+"brain","brand","brass","brave","bread","break","breed","brick","bridge","brief",
+"bright","broad","broken","broom","brown","brush","bucket","build","bulky","bullet",
+"bundle","burly","burst","bushy","butte","cabin","cable","cache","cagey","cakey",
+"caller","calmly","campo","canal","candy","cane","canny","canoe","caper","caput",
+"carat","carry","carve","casey","catch","cater","cause","cedar","cellar","chain",
+"chair","chalk","champ","chance","change","charm","chart","chase","cheap","cheat",
+"check","cheer","chess","chest","chide","chief","child","chill","china","chirp",
+"chore","chose","chunk","cider","circle","city","claim","clamp","clean","clear",
+"climb","clock","close","cloth","cloud","clown","coast","cocoa","code","colon",
+"color","comet","conga","copy","coral","core","corny","couch","could","count",
+"court","cover","crane","crash","crawl","crave","cream","creek","creep","crime",
+"crisp","cross","crowd","crush","cubic","curio","curve","cycle","daily","dance",
+"daisy","death","debts","debut","delay","demon","depth","diary","digit","dirty",
+"dodge","dogma","doubt","draft","drama","dream","dress","drink","drive","early",
+"earth","eager","eagle","eight","elbow","empty","equal","equip","erase","error",
+"event","every","exact","exist","exit","extra","faint","false","fancy","faulty",
+"feast","fence","ferry","fever","fiber","field","fifth","fifty","fight","final",
+"first","fishy","fixer","flame","flash","fleet","flesh","float","floor","flour",
+"flower","fluid","flush","focus","foggy","force","forge","forty","found","foxes",
+"frame","frank","fraud","fresh","front","fruit","funny","gaily","gamer","garden",
+"gauge","ghost","giant","glass","globe","goose","grade","grain","grant","grass",
+"grave","great","green","greet","grief","group","guard","guess","guest","guide",
+"habit","happy","harsh","haste","hatch","haunt","heart","heavy","hello","hinge",
+"hobby","hotel","house","hover","human","hurry","ideal","image","imply","index",
+"inner","input","irony","joint","jolly","judge","juice","karen","keeps","knife",
+"knock","label","lacey","large","laser","later","laugh","layer","learn","lemon",
+"level","light","limit","linen","liver","loose","lucky","lunar","lunch","magic",
+"major","maker","mango","march","match","maybe","meant","media","merit","merge",
+"meter","might","minor","minty","model","modify","money","month","moral","motor",
+"mount","mouse","mouth","music","naked","naval","needy","night","noise","nomad",
+"north","ocean","offer","olive","onion","opera","orbit","order","organ","other",
+"outer","owner","paint","paper","party","paste","patch","pause","peace","peach",
+"pearl","penny","peril","phone","piano","pitch","place","plain","plant","plate",
+"play","plenty","point","poker","polar","power","press","price","pride","prime",
+"print","prior","prize","probe","proof","proud","prove","pulse","punch","queen",
+"quick","quiet","radio","raise","rally","range","rapid","ratio","reach","ready",
+"relax","right","river","roast","roman","rough","round","route","royal","rural",
+"sadly","safe","sailor","salad","salty","sandy","satyr","scale","scare","scene",
+"score","screen","screw","seize","sense","serve","shadow","shake","share","sharp",
+"sheep","sheet","shelf","shell","shift","shine","shirt","shock","shore","short",
+"shout","sight","silky","silly","skill","slate","sleep","slide","slight","small",
+"smile","smoke","snowy","sober","solid","solve","sorry","sound","south","space",
+"spare","speak","speed","spell","spite","split","spoil","spray","stand","start",
+"state","steam","steel","stick","still","stock","stone","store","storm","story",
+"street","strike","strong","sunny","super","sweet","table","taste","teach","thank",
+"their","there","these","thing","think","third","those","three","throw","tight",
+"tiger","tiled","times","today","token","tonic","tooth","total","touch","train",
+"treat","trees","trial","tribe","trick","troll","truth","uncle","under","upper",
+"urban","usage","usual","valid","value","vapor","vault","verge","vital","voice",
+"waste","watch","water","wave","waver","weary","weave","weight","whale","wheat",
+"where","which","white","whole","width","woman","world","worry","worth","would",
+"write","young"
+    ];
+
+    const dailyAnsBox = document.getElementById('dailyAnsBox');
+    const showAnsBtn = document.getElementById('showAnsBtn');
+    let isAnsRevealed = false;
+
+    showAnsBtn.onclick = ()=>{
+      if(!isAnsRevealed){
+        dailyAnsBox.textContent = dailyAnswer.toUpperCase();
+        isAnsRevealed = true;
+        showAnsBtn.innerHTML = `<span class="zh">已显示答案</span><span class="en">Answer Revealed</span>`;
+      }
+    };
+
+    // 模拟器
+    const simBoard = document.getElementById('simBoard');
+    const simGuess = document.getElementById('simGuess');
+    const simSubmit = document.getElementById('simSubmit');
+    const simReset = document.getElementById('simReset');
+
+    function getColor(guess, ans){
+      let arr = [];
+      let ansArr = ans.split('');
+      for(let i=0;i<5;i++){
+        if(guess[i]===ans[i]){
+          arr.push('green');
+          ansArr[i] = null;
+        }else arr.push(null);
+      }
+      for(let i=0;i<5;i++){
+        if(arr[i]==='green') continue;
+        if(ansArr.includes(guess[i])){
+          arr[i]='yellow';
+          ansArr[ansArr.indexOf(guess[i])]=null;
+        }else arr[i]='gray';
+      }
+      return arr;
+    }
+
+    simSubmit.onclick = ()=>{
+      const g = simGuess.value.toLowerCase();
+      if(g.length!==5) return alert(body.classList.contains('show-en') ? "Enter 5 letters" : "请输入5个字母");
+      const colors = getColor(g, dailyAnswer);
+      let row = '<div class="sim-board-row">';
+      for(let i=0;i<5;i++){
+        row += `<div class="tile ${colors[i]}">${g[i].toUpperCase()}</div>`;
+      }
+      row += '</div>';
+      simBoard.innerHTML += row;
+      simGuess.value = '';
+    }
+
+    simReset.onclick = ()=>{
+      simBoard.innerHTML = '';
+    }
+
+    // 过滤器
+    const filterBtn = document.getElementById('filterBtn');
+    filterBtn.onclick = ()=>{
+      const mustHave = document.getElementById('mustHave').value.toLowerCase().replace(/[^a-z]/g,'');
+      const mustNotHave = document.getElementById('mustNotHave').value.toLowerCase().replace(/[^a-z]/g,'');
+      
+      let fixedPos = document.getElementById('fixedPos').value.toLowerCase().replace(/[^a-z_]/g,'').padEnd(5,'_').slice(0,5);
+      let notFixedPos = document.getElementById('notFixedPos').value.toLowerCase().replace(/[^a-z_]/g,'').padEnd(5,'_').slice(0,5);
+
+      let res = wordList.filter(w => {
+        if (w.length !== 5) return false;
+        for(let c of mustHave) if(!w.includes(c)) return false;
+        for(let c of mustNotHave) if(w.includes(c)) return false;
+        for(let i=0;i<5;i++){
+          if(fixedPos[i] !== '_' && w[i] !== fixedPos[i]) return false;
+        }
+        for(let i=0;i<5;i++){
+          if(notFixedPos[i] !== '_' && w[i] === notFixedPos[i]) return false;
+        }
+        return true;
+      });
+
+      if(res.length === 0){
+        document.getElementById('filterResult').innerHTML = body.classList.contains('show-en') 
+          ? "No 5-letter words found" 
+          : "未找到匹配的5字母单词";
+      }else{
+        document.getElementById('filterResult').innerHTML = res.map(x=>`<span class="word">${x.toUpperCase()}</span>`).join(' ');
+      }
+    }
+  </script>
+</body>
+</html>
